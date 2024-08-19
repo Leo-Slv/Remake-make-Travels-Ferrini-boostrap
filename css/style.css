@@ -1,0 +1,70 @@
+#pacotes * {
+  margin: 0;
+}
+
+html,
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    display: none;
+  }
+
+  .font-tittle {
+    margin-top: 5%;
+    margin-left: 8%;
+  }
+
+  #img-carousel {
+    height: 5rem;
+  }
+}
+
+#img-carousel {
+  height: 20rem;
+}
+
+@font-face {
+  src: url("../fonts/Southpaw_2/Southpaw.ttf");
+  font-family: "Southpaw";
+}
+
+.font-tittle {
+  font-family: "Southpaw";
+
+}
+
+
+#pacotes .card {
+  margin-bottom: 15%;
+  border: none;
+  width: 85%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pacotes .card:hover {
+  transition: 0.7s;
+  scale: 1.1;
+}
+
+.carousel {
+  margin-top: 3.6%;
+}
+
+#fundo {
+  height: 100vh;
+  background-image: url("../img/login_hotel.jpg");
+  background-repeat: no-repeat;
+  background-size: 120%;
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+  font-size: x-large;
+}
