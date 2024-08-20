@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-12"> 
+  <div class="col-sm-12 text-center"> 
     <div class="btn-group">
           <a href='#' class="btn btn-primary">Caroussel</a>
           <a href='#' class="btn btn-primary">Pacotes</a>
