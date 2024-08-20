@@ -2,7 +2,9 @@
 session_start(); 
 error_reporting(E_ALL ^ E_WARNING);
 ini_set('display_errors', 1) ;
-uf(!empty($_SESSION['id'])){
+if(!empty($_SESSION['id'])){
+    $_SESSION['id'];
+    $_SESSION['usuario'];
     require_once '../conect.php';
 }
 else{
