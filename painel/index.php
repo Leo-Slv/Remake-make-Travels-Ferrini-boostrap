@@ -1,6 +1,7 @@
 <?php
-  session_start();
-  echo $_SESSION['id'];
-  echo $_SESSION['usuario'];
+ require_once 'header.php';
 ?>
 
+<body>
+    <?php require_once 'nav.php';?>
+</body>
