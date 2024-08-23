@@ -6,6 +6,7 @@ if(!empty($_SESSION['id'])){
     $_SESSION['id'];
     $_SESSION['usuario'];
     require_once '../conect.php';
+    require_once 'dialog.php';
 }
 else{
     header("Location: logout.php");
