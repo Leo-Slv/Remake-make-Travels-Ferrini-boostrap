@@ -1,6 +1,6 @@
 <div class="modal fade" id="upload" data-backdrop="static">
     <div class="modal-dialog modal-md div modal-content">
-        <form action="" class="form-group">
+        <form method="post" enctype="multipart/form-data" class="form-group">
             <div class="modal-header">
                 Upload Imagem
             </div>
