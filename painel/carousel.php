@@ -24,4 +24,37 @@ require_once './carousel/script.php';
         </div>
     </div>
 
+    <?php
+    if(!empty($_POST)){
+        if($_POST['action'] == "Cadastrar"){
+            $extensao = pathinfo($_FILES['imagem']['name'],PATHINFO_EXTENSION);
+            if($extensao == "png" || $_extensao == "jpg" || $extensao == "jpeg" ||
+            $extensao == "jfif" || $extensao == "webp"){
+                $uploaddir = '../img/carousel/';
+                if($extensao == "jpeg"){
+                    $ext = strtolower(substr($_FILES['imagem']['name'],-5));
+                }
+                else if($extensao == "jfif"){
+                    $ext = strtolower(substr($_FILES['imagem']['name'],-5));
+                }
+                else if($extensao == "webp"){
+                    $ext = strtolower(substr($_FILES['imagem']['name'],-5));
+                }
+                else{
+                    $ext = strtolower(substr($_FILES['imagem']['name'],-4));
+                }
+                $imagem = md5(date("d-m-y-h-i-s").$_FILES['imagem']['name']).$ext;
+                $uploadfile = $uploaddir . basename($imagem);
+                move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile);
+            
+                UploadImagemCarousel($imagem, 
+                $_POST['descricao'],
+                $_POST['status'],
+                "carousel.php"  
+            );
+            }
+        }
+    }
+    ?>
+
 </body>
