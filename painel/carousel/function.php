@@ -31,4 +31,15 @@ function UploadImagemCarousel($imagem, $descricao, $status, $pagina){
             url_imagem_carousel = "'.$imagem.'"';
     $res =  $GLOBALS['con']->query($sql);
   }
+
+  function ListarImagem(){
+    $sql = 'select cd_carousel, url_imagem_carousel from tb_carousel';
+    $res = $GLOBALS['con']->query($sql);
+    if($res->num_rows > 0){
+        return $res;
+    }
+    else{
+      echo 'sem imagens cadastradas!';
+    }
+  }
 ?>
