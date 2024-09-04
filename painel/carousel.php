@@ -20,9 +20,32 @@ require_once './carousel/script.php';
                 <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#upload">
                     + Imagem
                 </button>
-            </div>
+            </div> 
         </div>
-    </div>
+        <div class='row'>
+            <?php
+            $listar = ListarImagem();
+            if($listar){
+                foreach($listar as $l){
+            ?>
+            <!--HTML -->
+            <div class="col-sm-3">
+            <div class="card">
+                <img src="../img/carousel/<?php echo $l['url_imagem_carousel'];?>" 
+                alt="" class="card-img img-fluid">
+                <div class="card-footer text-center">
+                        <button class="btn btn-danger">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+        }
+        ?>
+            </div>
+            </div>
 
     <?php
     if(!empty($_POST)){
