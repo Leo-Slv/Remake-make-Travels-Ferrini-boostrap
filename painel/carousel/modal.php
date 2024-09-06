@@ -1,3 +1,4 @@
+<!-- Modal de Upload!-->
 <div class="modal fade" id="upload" data-backdrop="static">
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
@@ -24,6 +25,7 @@
     </div>
 </div>
 
+<!-- Modal de edit!-->
 <div class="modal fade" id="edit" data-backdrop="static">
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
