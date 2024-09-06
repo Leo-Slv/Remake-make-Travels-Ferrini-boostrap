@@ -33,7 +33,7 @@ function UploadImagemCarousel($imagem, $descricao, $status, $pagina){
   }
 
   function ListarImagem(){
-    $sql = 'select cd_carousel, url_imagem_carousel from tb_carousel';
+    $sql = 'select cd_carousel, url_imagem_carousel, ds_carousel, st_carousel from tb_carousel';
     $res = $GLOBALS['con']->query($sql);
     if($res->num_rows > 0){
         return $res;
@@ -41,5 +41,24 @@ function UploadImagemCarousel($imagem, $descricao, $status, $pagina){
     else{
       echo 'sem imagens cadastradas!';
     }
+  }
+
+  function Editar($item, $descricao, $status, $pagina){
+    $sql = 'update tb_carousel set
+            ds_carousel = "'.$descricao.'",
+            st_carousel = "'.$status.'"
+            where
+            cd_carousel = '.$item;
+    DML ($sql, "Alterado com sucesso!", "Ops! Não foi alterado!", $pagina);
+  }
+
+  function Delete($item, $imagem, $pagina){
+  $dir = "../img/carousel/".$imagem;
+  chmod($dir, 0777);
+  unlink($dir);
+  $sql = 'delete from tb_carousel
+          where
+          cd_carousel = '.$item;
+    DML($sql, "Excluido com sucesso!", "Ops! Não foi excluído!", $pagina);
   }
 ?>
