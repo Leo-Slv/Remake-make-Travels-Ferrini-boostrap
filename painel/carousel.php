@@ -7,6 +7,14 @@ require_once './carousel/script.php';
 
 ?>
 
+<style>
+    .card-img{
+        height: 230px;}
+    .row .card{
+        margin-bottom: 3%
+    }
+</style>
+
 <body>
     <?php require_once 'nav.php'; ?>
     <div class="container-fluid">
@@ -33,8 +41,26 @@ require_once './carousel/script.php';
             <div class="card">
                 <img src="../img/carousel/<?php echo $l['url_imagem_carousel'];?>" 
                 alt="" class="card-img img-fluid">
+                <div class="card-body">
+                    <?php echo $l['ds_carousel']; ?>
+                </div>
                 <div class="card-footer text-center">
-                        <button class="btn btn-danger">
+                    <button class="btn btn-info btn-sm edit"
+                    data-toggle="modal"
+                    data-target="#edit"
+                    title="editar"
+                    cd="<?php echo $l['cd_carousel']; ?>"
+                    status="<?php echo $l['st_carousel']; ?>"
+                    descricao="<?php echo $l['ds_carousel']; ?>">
+                        <i class="bi bi-pencil">
+                        </i>
+                    </button>
+                        <button class="btn btn-danger delete"
+                        data-toggle="modal"
+                        data-target="#delete"
+                        title="excluir"
+                        cd="<?php echo $l['cd_carousel']; ?>"
+                        imagem="<?php echo $l['url_imagem_carousel']; ?>">
                             <i class="bi bi-trash3"></i>
                         </button>
                     </div>
@@ -76,6 +102,21 @@ require_once './carousel/script.php';
                 "carousel.php"  
             );
             }
+        }
+        else if($_POST['action'] == "Alterar"){
+            Editar(
+                $_POST['cd'],
+                $_POST['descricao'],
+                $_POST['status'],
+                $pagina
+            );
+        }
+        else if($_POST['action'] == "Excluir"){
+            Delete(
+                $_POST['cd'],
+                $_POST['imagem'],
+                $pagina
+            );
         }
     }
     ?>
