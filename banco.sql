@@ -24,3 +24,13 @@ nm_email= 'leonardo@mail.com',
 cd_senha = sha2('123',256);
 
 select * from tb_carousel;
+
+create table tb_pacote(
+  cd_pacote int auto_increment primary key,
+  nm_destino_pacote varchar(80) not null,
+  ds_periodo varchar(80) not null,
+  ds_acomodacao longtext not null,
+  qt_parcela_pacote int not null,
+  url_imagem_pacote varchar(80) not null
+);
+
