@@ -51,3 +51,28 @@
         </form>
     </div>
 </div>
+
+<!-- Modal de delete!-->
+<div class="modal fade" id="delete" data-backdrop="static">
+    <div class="modal-dialog modal-md div modal-content">
+        <form method="post" enctype="multipart/form-data" class="form-group">
+            <div class="modal-header">
+                Exlcuir 
+            </div>
+            <div class="modal-body">
+                <input type="text" name="cd" class="form-control" id="cd">
+                <br>
+                <input type="text" name="imagem" id="imagem" class="form-control">
+                    <h4 class="text-danger font-weight-bolder">
+                        Deseja realmente exlcuir este item?
+                    </h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dimiss="modal">
+                    Fechar
+                </button>
+                <input type="submit" class="btn btn-danger" name="action" value="Excluir">
+            </div>
+        </form>
+    </div>
+</div>
