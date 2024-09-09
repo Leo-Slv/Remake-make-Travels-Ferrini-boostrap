@@ -35,6 +35,14 @@ require_once './carousel/script.php';
             $listar = ListarImagem();
             if($listar){
                 foreach($listar as $l){
+                    if($l['st_carousel'] == "1"){
+                        $badge = 'badge-success';
+                        $flag = 'ativo';
+                    }
+                    else{
+                        $badge = 'badge-danger';
+                        $flag = 'inativo';
+                    }
             ?>
             <!--HTML -->
             <div class="col-sm-3">
@@ -42,6 +50,9 @@ require_once './carousel/script.php';
                 <img src="../img/carousel/<?php echo $l['url_imagem_carousel'];?>" 
                 alt="" class="card-img img-fluid">
                 <div class="card-body">
+                    <span class="badge <?php echo $badge;?>">
+                        <?php echo $flag; ?>
+                    </span>
                     <?php echo $l['ds_carousel']; ?>
                 </div>
                 <div class="card-footer text-center">
@@ -94,6 +105,7 @@ require_once './carousel/script.php';
                 }
                 $imagem = md5(date("d-m-y-h-i-s").$_FILES['imagem']['name']).$ext;
                 $uploadfile = $uploaddir . basename($imagem);
+                chmod($uploadfile, 0777);
                 move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile);
             
                 UploadImagemCarousel($imagem, 
