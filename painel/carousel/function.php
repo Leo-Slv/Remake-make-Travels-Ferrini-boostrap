@@ -54,7 +54,6 @@ function UploadImagemCarousel($imagem, $descricao, $status, $pagina){
 
   function Delete($item, $imagem, $pagina){
   $dir = "../img/carousel/".$imagem;
-  chmod($dir, 0777);
   unlink($dir);
   $sql = 'delete from tb_carousel
           where
