@@ -12,7 +12,7 @@
             <img src="./img/hotel_caribe.jpg" alt="" class="card-img">
             <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
                 <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa
+                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
                 <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
                 <strong> Parcele em até 10x sem juros </strong>
                 <br>
@@ -26,7 +26,7 @@
             <img src="./img/hotel_hawaii.jpg" alt="" class="card-img">
             <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
                 <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa
+                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
                 <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
                 <strong> Parcele em até 10x sem juros </strong>
                 <br>
@@ -40,7 +40,7 @@
             <img src="./img/hotel_natal.jpg" alt="" class="card-img">
             <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
                 <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa
+                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
                 <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
                 <strong> Parcele em até 10x sem juros </strong>
                 <br>
@@ -54,7 +54,7 @@
             <img src="./img/hotel_maldivas.jpg" alt="" class="card-img">
             <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
                 <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa
+                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
                 <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
                 <strong> Parcele em até 10x sem juros </strong>
                 <br>
@@ -68,7 +68,7 @@
             <img src="./img/hotel_maldivas.jpg" alt="" class="card-img">
             <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
                 <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa
+                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
                 <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
                 <strong> Parcele em até 10x sem juros </strong>
                 <br>
