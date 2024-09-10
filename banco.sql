@@ -25,12 +25,23 @@ cd_senha = sha2('123',256);
 
 select * from tb_carousel;
 
+drop table tb_carousel;
+
+delete from tb_carousel;
+
 create table tb_pacote(
   cd_pacote int auto_increment primary key,
   nm_destino_pacote varchar(80) not null,
   ds_periodo varchar(80) not null,
   ds_acomodacao longtext not null,
   qt_parcela_pacote int not null,
-  url_imagem_pacote varchar(80) not null
+  url_imagem_pacote varchar(80) not null,
+  st_pacote char(1) not null default "1",
+  ic_active char(1)
 );
 
+select * from tb_pacote;
+
+drop table tb_pacote;
+
+delete from tb_pacote;
