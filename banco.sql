@@ -27,6 +27,7 @@ select * from tb_carousel;
 
 drop table tb_carousel;
 
+SET SQL_SAFE_UPDATES=0;
 delete from tb_carousel;
 
 create table tb_pacote(
@@ -44,4 +45,5 @@ select * from tb_pacote;
 
 drop table tb_pacote;
 
+SET SQL_SAFE_UPDATES=0;
 delete from tb_pacote;
