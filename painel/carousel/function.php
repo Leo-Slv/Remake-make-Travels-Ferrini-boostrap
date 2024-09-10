@@ -39,7 +39,7 @@ function UploadImagemCarousel($imagem, $descricao, $status, $pagina){
         return $res;
     }
     else{
-      echo 'sem imagens cadastradas!';
+      echo '<div class="ml-3">Sem imagens cadastradas!</div>';
     }
   }
 
