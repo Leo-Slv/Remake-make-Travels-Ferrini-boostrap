@@ -14,18 +14,18 @@
                 <br>
                 <Textarea name="acomodacao" class="form-control" rows="3" placeholder="Descrição da Acomodação"></Textarea>
                 <br>
-
+                <label> Quantidade de Parcelas</label>
                 <select name="parcela" class="form-control" placeholder="Quantidade de Parcelas">
-                    <option>1x</option>
-                    <option>2x</option>
-                    <option>3x</option>
-                    <option>4x</option>
-                    <option>5x</option>
-                    <option>6x</option>
-                    <option>7x</option>
-                    <option>8x</option>
-                    <option>9x</option>
-                    <option>10x</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
                 <br>
                 <select name="status" class="form-control">
@@ -48,12 +48,30 @@
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
             <div class="modal-header">
-                Editar Imagem
+                Editar Pacote
             </div>
             <div class="modal-body">
-                <input type="text" name="cd" class="form-control" id="cd">
+                <Textarea name="cd" id="cd" class="form-control" rows="1" placeholder="Código do pacote"></Textarea>
                 <br>
-                <Textarea name="descricao" id="descricao" class="form-control" rows="5" placeholder="descrição"></Textarea>
+                <Textarea name="destino" id="destino" class="form-control" rows="1" placeholder="Nome do Destino"></Textarea>
+                <br>
+                <Textarea name="periodo" id="periodo" class="form-control" rows="2" placeholder="Periodo"></Textarea>
+                <br>
+                <Textarea name="acomodacao" id="acomodacao" class="form-control" rows="3" placeholder="Descrição da Acomodação"></Textarea>
+                <br>
+                <label> Quantidade de Parcelas</label>
+                <select name="parcela" id="parcela" class="form-control" placeholder="Quantidade de Parcelas">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
                 <br>
                 <select name="status" id="status" class="form-control">
                     <option value="1">ativo</option>
