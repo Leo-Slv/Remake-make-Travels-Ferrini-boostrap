@@ -2,10 +2,16 @@
   $(document).on('click', '.edit', function(){
     var cd = $(this).attr('cd');
     $('.modal #cd').val(cd);
+    var destino = $(this).attr('destino');
+    $('.modal #destino').val(destino);
+    var periodo = $(this).attr('periodo');
+    $('.modal #periodo').val(periodo);
+    var acomodacao = $(this).attr('acomodacao');
+    $('.modal #acomodacao').val(acomodacao);
+    var parcela = $(this).attr('parcela');
+    $('.modal #parcela').val(parcela);
     var status = $(this).attr('status');
     $('.modal #status').val(status);
-    var descricao = $(this).attr('descricao');
-    $('.modal #descricao').val(descricao);
   });
 
   $(document).on('click', '.delete', function(){
