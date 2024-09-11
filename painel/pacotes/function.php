@@ -45,21 +45,26 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, 
     }
   }
 
-  function Editar($item, $descricao, $status, $pagina){
+  function Editar(  $item, $destino, $periodo, $acomodacao, $parcela, $status, $pagina){
     $sql = 'update tb_pacote set
-            ds_carousel = "'.$descricao.'",
-            st_carousel = "'.$status.'"
+            nm_destino_pacote = "'.$destino.'",
+            ds_periodo = "'.$periodo.'",
+            ds_acomodacao = "'.$acomodacao.'",
+            qt_parcela_pacote = "'.$parcela.'",
+            st_pacote = "'.$status.'"
             where
-            cd_carousel = '.$item;
+            cd_pacote = '.$item;
     DML ($sql, "Alterado com sucesso!", "Ops! Não foi alterado!", $pagina);
   }
 
+  
+
   function Delete($item, $imagem, $pagina){
-  $dir = "../img/carousel/".$imagem;
+  $dir = "../img/pacotes/".$imagem;
   unlink($dir);
-  $sql = 'delete from tb_carousel
+  $sql = 'delete from tb_pacote
           where
-          cd_carousel = '.$item;
+          cd_pacote = '.$item;
     DML($sql, "Excluido com sucesso!", "Ops! Não foi excluído!", $pagina);
   }
 ?>
