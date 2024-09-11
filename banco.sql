@@ -10,6 +10,11 @@ cd_senha varchar(128) not null,
 dt_registro datetime not null default current_timestamp
 );
 
+insert into tb_usuario set
+nm_usuario = 'Leonardo',
+nm_email= 'leonardo@mail.com',
+cd_senha = sha2('123',256);
+
 create table tb_carousel (
 cd_carousel int auto_increment primary key,
 url_imagem_carousel varchar(100) not null,
@@ -18,10 +23,11 @@ ic_active char(1),
 st_carousel char(1) not null
 );
 
-insert into tb_usuario set
-nm_usuario = 'Leonardo',
-nm_email= 'leonardo@mail.com',
-cd_senha = sha2('123',256);
+insert into tb_carousel set
+cd_carousel = '10',
+ds_carousel = 'Teste',
+url_imagem_pacote = 'ibiza.jfif',
+st_carousel = '1';
 
 select * from tb_carousel;
 
@@ -40,6 +46,15 @@ create table tb_pacote(
   st_pacote char(1) not null default "1",
   ic_active char(1)
 );
+
+insert into tb_pacote set
+cd_pacote = '10',
+nm_destino_pacote = 'Ibiza',
+ds_periodo = '5 Dias e 4 Noites',
+ds_acomodacao = 'hotel 4 estrelas, pensão completa',
+qt_parcela_pacote = '10',
+url_imagem_pacote = 'ibiza.jfif',
+st_pacote = '1';
 
 select * from tb_pacote;	
 
