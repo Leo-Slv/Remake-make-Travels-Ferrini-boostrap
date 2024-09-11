@@ -41,9 +41,10 @@ create table tb_pacote(
   ic_active char(1)
 );
 
-select * from tb_pacote;
+select * from tb_pacote;	
 
 drop table tb_pacote;
 
 SET SQL_SAFE_UPDATES=0;
 delete from tb_pacote;
+
