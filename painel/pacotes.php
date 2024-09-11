@@ -35,7 +35,7 @@ require_once './pacotes/script.php';
             $listar = ListarImagem();
             if($listar){
                 foreach($listar as $l){
-                    if($l['st_carousel'] == "1"){
+                    if($l['st_pacote'] == "1"){
                         $badge = 'badge-success';
                         $flag = 'ativo';
                     }
@@ -76,9 +76,12 @@ require_once './pacotes/script.php';
                     data-toggle="modal"
                     data-target="#edit"
                     title="editar"
-                    cd="<?php echo $l['cd_carousel']; ?>"
-                    status="<?php echo $l['st_carousel']; ?>"
-                    descricao="<?php echo $l['ds_carousel']; ?>">
+                    cd="<?php echo $l['cd_pacote']; ?>"
+                    destino="<?php echo $l['nm_destino_pacote'];?>"
+                    periodo="<?php echo $l['ds_periodo'];?>"
+                    acomodacao="<?php echo $l['ds_acomodacao'];?>"
+                    parcela="<?php echo $l['qt_parcela_pacote'];?>"
+                    status="<?php echo $l['st_pacote']; ?>">
                         <i class="bi bi-pencil">
                         </i>
                     </button>
@@ -86,8 +89,8 @@ require_once './pacotes/script.php';
                         data-toggle="modal"
                         data-target="#delete"
                         title="excluir"
-                        cd="<?php echo $l['cd_carousel']; ?>"
-                        imagem="<?php echo $l['url_imagem_carousel']; ?>">
+                        cd="<?php echo $l['cd_pacote']; ?>"
+                        imagem="<?php echo $l['url_imagem_pacote']; ?>">
                             <i class="bi bi-trash3"></i>
                         </button>
                     </div>
@@ -141,7 +144,6 @@ require_once './pacotes/script.php';
                 $_POST['periodo'],
                 $_POST['acomodacao'],
                 $_POST['parcela'],
-                $_POST['imagem'],
                 $_POST['status'],
                 $pagina
             );
