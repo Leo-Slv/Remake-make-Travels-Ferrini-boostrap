@@ -45,7 +45,7 @@ require_once './pacotes/script.php';
                     }
             ?>
             <!--HTML -->
-            <div class="col-sm-3">
+            <div class="col-sm-4">
             <div class="card">
                 <img src="../img/pacotes/<?php echo $l['url_imagem_pacote'];?>" 
                 alt="" class="card-img img-fluid">
