@@ -57,6 +57,21 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, 
     DML ($sql, "Alterado com sucesso!", "Ops! Não foi alterado!", $pagina);
   }
 
+  function EditarImagem($item, $imagem, $pagina){
+    $sql = 'select url_imagem_pacote from tb_pacote where cd_pacote =' .$item;
+    $smt = $GLOBALS['con']->query($sql);
+    $r = $smt->fetch_assoc();
+
+    $dir = "../img/pacotes/".$r['url_imagem_pacote'];
+    chmod($dir, 0777);
+    unlink($dir);
+    $sql = 'update tb_pacote set
+            url_imagem_pacote = "'.$imagem.'"
+            where
+            cd_pacote = '.$item;
+            DML($sql, "Imagem alterada com sucesso!", "Ops! Não foi alterado!", $pagina);
+
+  }
   
 
   function Delete($item, $imagem, $pagina){
