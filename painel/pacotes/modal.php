@@ -89,7 +89,7 @@
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
             <div class="modal-header">
-                Exlcuir 
+                Excluir 
             </div>
             <div class="modal-body">
                 <input type="text" name="cd" class="form-control" id="cd" readonly="readonly">
