@@ -26,7 +26,7 @@ st_carousel char(1) not null
 insert into tb_carousel set
 cd_carousel = '10',
 ds_carousel = 'Teste',
-url_imagem_pacote = 'ibiza.jfif',
+url_imagem_carousel = 'ibiza.jfif',
 st_carousel = '1';
 
 select * from tb_carousel;
