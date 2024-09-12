@@ -2,6 +2,8 @@ create database db_remake_travel;
 
 use db_remake_travel;
 
+drop database db_remake_travel;
+
 create table tb_usuario (
 cd_usuario int primary key auto_increment,
 nm_usuario varchar(80) not null,
