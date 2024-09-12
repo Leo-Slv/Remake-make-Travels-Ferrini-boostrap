@@ -1,4 +1,12 @@
 <script>
+  $(document).on('click', '.editimg', function(){
+    var cd = $(this).attr('cd');
+    $('.modal #cd').val(cd);
+    var imagem = $(this).attr('imagem');
+    $('.modal #imagem').val(imagem);
+
+  });
+
   $(document).on('click', '.edit', function(){
     var cd = $(this).attr('cd');
     $('.modal #cd').val(cd);
