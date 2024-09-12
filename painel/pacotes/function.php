@@ -45,16 +45,23 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, 
     }
   }
 
-  function Editar(  $item, $destino, $periodo, $acomodacao, $parcela, $status, $pagina){
+  function Editar(  $item, $destino, $periodo, $acomodacao, $parcela, $pagina){
     $sql = 'update tb_pacote set
             nm_destino_pacote = "'.$destino.'",
             ds_periodo = "'.$periodo.'",
             ds_acomodacao = "'.$acomodacao.'",
-            qt_parcela_pacote = "'.$parcela.'",
-            st_pacote = "'.$status.'"
+            qt_parcela_pacote = "'.$parcela.'"
             where
             cd_pacote = '.$item;
     DML ($sql, "Alterado com sucesso!", "Ops! Não foi alterado!", $pagina);
+  }
+
+  function EditarStatus( $item, $status, $pagina){
+    $sql = 'update tb_pacote set
+            st_pacote = "'.$status.'"
+            where
+            cd_pacote = '.$item;
+            DML ($sql, "Alterado com sucesso!", "Ops! Não foi alterado!", $pagina);
   }
 
   function EditarImagem($item, $imagem, $pagina){

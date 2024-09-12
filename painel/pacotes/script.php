@@ -1,4 +1,12 @@
 <script>
+  $(document).on('click', '.editst', function(){
+    var cd = $(this).attr('cd');
+    $('.modal #cd').val(cd);
+    var status = $(this).attr('status');
+    $('.modal #status').val(status);
+
+  });
+
   $(document).on('click', '.editimg', function(){
     var cd = $(this).attr('cd');
     $('.modal #cd').val(cd);
@@ -18,8 +26,6 @@
     $('.modal #acomodacao').val(acomodacao);
     var parcela = $(this).attr('parcela');
     $('.modal #parcela').val(parcela);
-    var status = $(this).attr('status');
-    $('.modal #status').val(status);
   });
 
   $(document).on('click', '.delete', function(){
