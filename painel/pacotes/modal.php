@@ -112,3 +112,26 @@
         </form>
     </div>
 </div>
+
+<!-- Modal de editimagem!-->
+<div class="modal fade" id="editimg" data-backdrop="static">
+    <div class="modal-dialog modal-md div modal-content">
+        <form method="post" enctype="multipart/form-data" class="form-group">
+            <div class="modal-header">
+                Editar Imagem do Pacote
+            </div>
+            <div class="modal-body">
+                <Textarea name="cd" id="cd" class="form-control" rows="1" placeholder="Código do pacote" readonly="readonly"></Textarea>
+                <br>
+                <input type="file" name="imagem" class="form-control">
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dimiss="modal">
+                    Fechar
+                </button>
+                <input type="submit" class="btn btn-info" name="action" value="Alterar Imagem">
+            </div>
+        </form>
+    </div>
+</div>
