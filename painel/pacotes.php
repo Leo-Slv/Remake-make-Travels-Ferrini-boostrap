@@ -69,10 +69,9 @@ require_once './pacotes/script.php';
                     <?php echo $l['qt_parcela_pacote']; ?>x
                     </strong>
                     <br>
-
                 </div>
                 <div class="card-footer text-center">
-                        <button class="btn btn-Warning btn-sm edit"
+                        <button class="btn btn-Warning btn-sm editimg"
                         data-toggle="modal"
                         data-target="#editimg"
                         title="editarimg"
@@ -88,8 +87,7 @@ require_once './pacotes/script.php';
                         destino="<?php echo $l['nm_destino_pacote'];?>"
                         periodo="<?php echo $l['ds_periodo'];?>"
                         acomodacao="<?php echo $l['ds_acomodacao'];?>"
-                        parcela="<?php echo $l['qt_parcela_pacote'];?>"
-                        status="<?php echo $l['st_pacote']; ?>">
+                        parcela="<?php echo $l['qt_parcela_pacote'];?>">
                             <i class="bi bi-pencil"></i>
                         </button>
                         <button class="btn btn-danger delete"
@@ -99,6 +97,14 @@ require_once './pacotes/script.php';
                         cd="<?php echo $l['cd_pacote']; ?>"
                         imagem="<?php echo $l['url_imagem_pacote']; ?>">
                             <i class="bi bi-trash3"></i>
+                        </button>
+                        <button class="btn btn-primary btn-sm editst"
+                        data-toggle="modal"
+                        data-target="#editst"
+                        title="editarst"
+                        cd="<?php echo $l['cd_pacote']; ?>"
+                        status="<?php echo $l['st_pacote']; ?>">
+                            <i class="bi bi-bell"></i>
                         </button>
                     </div>
                 </div>
@@ -180,6 +186,13 @@ require_once './pacotes/script.php';
                 $_POST['periodo'],
                 $_POST['acomodacao'],
                 $_POST['parcela'],
+                $pagina
+            );
+        }
+
+        else if($_POST['action'] == "Alterar Status"){
+            EditarStatus(
+                $_POST['cd'],
                 $_POST['status'],
                 $pagina
             );
