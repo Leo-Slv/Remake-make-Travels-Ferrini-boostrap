@@ -1,3 +1,17 @@
+<?php
+require_once 'function.php';
+?>
+
+<style>
+    .hide {
+    position: absolute; 
+    width: 0;           
+    height: 0;         
+    overflow: hidden;  
+    opacity: 0;      
+}
+</style>
+
 <section id="pacotes">
     <div class="row">
         <div class="col-sm-12" style="padding: 3% 3% " >
@@ -7,76 +21,44 @@
         </div>
     </div>
     <div class="row">
-    <div class="col-sm-3">
+    <?php
+            $listar = ListarPacotes();
+            if($listar){
+                foreach($listar as $l){
+                    $st = '';
+                    if($l['st_pacote'] == "0"){
+                        // $st = 'hide'; // Aplica a classe CSS hide e retire o continue
+                        continue; // a instrução continue faz com que o loop foreach pule para a próxima iteração, ignorando todo o código que renderiza o card.
+                    }
+            ?>
+    <div class="col-sm-3 <?php echo $st;?>">
         <div class="card text-center mx-auto">
-            <img src="./img/hotel_caribe.jpg" alt="" class="card-img">
-            <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
-                <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
-                <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
-                <strong> Parcele em até 10x sem juros </strong>
-                <br>
-                <br>
+            <img src="img/pacotes/<?php echo $l['url_imagem_pacote'];?>" alt="" class="card-img">
+            <div class="card-body">
+                <h3 class= "font-weight-bolder">
+                    <?php echo $l['nm_destino_pacote']; ?>
+                    </h3>
+                    <strong>Periodo:</strong>
+                    <?php echo $l['ds_periodo']; ?>
+                    <strong>Acomodação:</strong>
+                    <?php echo $l['ds_acomodacao']; ?>
+                    <br>
+                    <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
+                    <strong>Parcele em até
+                    <?php echo $l['qt_parcela_pacote']; ?>x
+                    sem juros
+                    </strong>
+                    <br>
+                    <br>
                 <a href="#" class="btn btn-outline-success">ver mais</a>
             </div>    
         </div>
     </div>
-    <div class="col-sm-3">
-        <div class="card text-center mx-auto ">
-            <img src="./img/hotel_hawaii.jpg" alt="" class="card-img">
-            <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
-                <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
-                <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
-                <strong> Parcele em até 10x sem juros </strong>
-                <br>
-                <br>
-                <a href="#" class="btn btn-outline-success">ver mais</a>    
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card text-center mx-auto">
-            <img src="./img/hotel_natal.jpg" alt="" class="card-img">
-            <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
-                <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
-                <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
-                <strong> Parcele em até 10x sem juros </strong>
-                <br>
-                <br>
-                <a href="#" class="btn btn-outline-success">ver mais</a>    
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card text-center mx-auto">
-            <img src="./img/hotel_maldivas.jpg" alt="" class="card-img">
-            <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
-                <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
-                <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
-                <strong> Parcele em até 10x sem juros </strong>
-                <br>
-                <br>
-                <a href="#" class="btn btn-outline-success">ver mais</a>    
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card text-center mx-auto">
-            <img src="./img/hotel_maldivas.jpg" alt="" class="card-img">
-            <div class="card-body"><h3 class= "font-weight-bolder"> Nome Pacote </h3>
-                <strong> Periodo: </strong> 4 dias e 3 noites.
-                <strong> Acomodações </strong> hotel 3 estrelas, pensão completa<br>
-                <strong style="font-size: 25pt;"> R$ 125,00 </strong>(dia/pessoa)<br>
-                <strong> Parcele em até 10x sem juros </strong>
-                <br>
-                <br>
-                <a href="#" class="btn btn-outline-success">ver mais</a>    
-            </div>
-        </div>
-    </div>
+    <?php
+            }
+        }
+    ?>
+   
         
   </div>
 </div>
@@ -86,7 +68,7 @@
 </section>
 
 
-<
+
 
 
 
