@@ -51,11 +51,11 @@ create table tb_pacote(
 
 insert into tb_pacote set
 cd_pacote = '10',
-nm_destino_pacote = 'Ibiza',
+nm_destino_pacote = 'Hawaii',
 ds_periodo = '5 Dias e 4 Noites',
 ds_acomodacao = 'hotel 4 estrelas, pensão completa',
 qt_parcela_pacote = '10',
-url_imagem_pacote = 'ibiza.jfif',
+url_imagem_pacote = 'hawaii.png',
 st_pacote = '1';
 
 select * from tb_pacote;	
@@ -64,4 +64,11 @@ drop table tb_pacote;
 
 SET SQL_SAFE_UPDATES=0;
 delete from tb_pacote;
+
+create table tb_servico(
+  cd_servico int auto_increment primary key,
+  nm_servico varchar(60) not null,
+  ds_servico longtext not null,
+  url_imagem_servico varchar(100) not null
+);
 

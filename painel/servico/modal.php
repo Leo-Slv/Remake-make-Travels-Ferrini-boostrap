@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
             <div class="modal-header">
-                Upload Pacote
+                Upload Serviço
             </div>
             <div class="modal-body">
                 <input type="file" name="imagem" class="form-control">
@@ -78,7 +78,7 @@
     <div class="modal-dialog modal-md div modal-content">
         <form method="post" enctype="multipart/form-data" class="form-group">
             <div class="modal-header">
-                Editar Imagem do Pacote
+                Editar Imagem do Serviço
             </div>
             <div class="modal-body">
                 <Textarea name="cd" id="cd" class="form-control" rows="1" placeholder="Código do pacote" readonly="readonly"></Textarea>
@@ -91,31 +91,6 @@
                     Fechar
                 </button>
                 <input type="submit" class="btn btn-info" name="action" value="Alterar Imagem">
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- Modal de editstatus!-->
-<div class="modal fade" id="editst" data-backdrop="static">
-    <div class="modal-dialog modal-md div modal-content">
-        <form method="post" enctype="multipart/form-data" class="form-group">
-            <div class="modal-header">
-                Editar Status do Pacote
-            </div>
-            <div class="modal-body">
-                <Textarea name="cd" id="cd" class="form-control" rows="1" placeholder="Código do pacote" readonly="readonly"></Textarea>
-                <br>
-                <select name="status" id="status" class="form-control">
-                    <option value="1">ativo</option>
-                    <option value="0">inativo</option>
-                </select>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dimiss="modal">
-                    Fechar
-                </button>
-                <input type="submit" class="btn btn-info" name="action" value="Alterar Status">
             </div>
         </form>
     </div>
