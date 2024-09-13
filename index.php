@@ -21,6 +21,9 @@ require_once 'carousel.php'
 require_once 'pacotes.php'
 ?>
 <?php
+require_once 'servicos.php'
+?>
+<?php
 require_once 'footer.php';
 ?>
 </body>
