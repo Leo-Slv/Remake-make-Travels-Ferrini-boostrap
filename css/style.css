@@ -52,6 +52,18 @@ body {
   scale: 1.1;
 }
 
+#servicos .card {
+  margin-bottom: 15%;
+  border: none;
+  width: 85%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#servicos .card:hover {
+  transition: 0.7s;
+  scale: 1.1;
+}
+
 .carousel {
   margin-top: 3.0%;
 }
