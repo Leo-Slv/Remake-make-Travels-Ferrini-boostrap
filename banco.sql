@@ -71,6 +71,18 @@ nm_servico = 'Café da Manhã',
 ds_servico = 'Self Service',
 url_imagem_servico = '47de9dc4443220f0c3ccb0584105df6e.png';
 
+insert into tb_servico set
+cd_servico = '2',
+nm_servico = 'Almoço',
+ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
+url_imagem_servico = '5df86e4a2b24ec3a4299c9a2059b8fb0.webp';
+
+insert into tb_servico set
+cd_servico = '3',
+nm_servico = 'Jantar',
+ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
+url_imagem_servico = 'cc9752223316f10b4fa9810a07a49746.webp';
+
 select * from tb_servico;	
 
 drop table tb_servico;
