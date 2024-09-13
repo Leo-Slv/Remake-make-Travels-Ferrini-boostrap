@@ -49,14 +49,7 @@ create table tb_pacote(
   ic_active char(1)
 );
 
-insert into tb_pacote set
-cd_pacote = '10',
-nm_destino_pacote = 'Hawaii',
-ds_periodo = '5 Dias e 4 Noites',
-ds_acomodacao = 'hotel 4 estrelas, pensão completa',
-qt_parcela_pacote = '10',
-url_imagem_pacote = 'hawaii.png',
-st_pacote = '1';
+
 
 select * from tb_pacote;	
 
@@ -72,3 +65,51 @@ create table tb_servico(
   url_imagem_servico varchar(100) not null
 );
 
+insert into tb_servico set
+cd_servico = '1',
+nm_servico = 'Café da Manhã',
+ds_servico = 'Self Service',
+url_imagem_servico = '47de9dc4443220f0c3ccb0584105df6e.png';
+
+select * from tb_servico;	
+
+drop table tb_servico;
+
+SET SQL_SAFE_UPDATES=0;
+delete from tb_servico;
+
+insert into tb_pacote set
+cd_pacote = '1',
+nm_destino_pacote = 'Hawaii',
+ds_periodo = '5 Dias e 4 Noites',
+ds_acomodacao = 'hotel 4 estrelas, pensão completa',
+qt_parcela_pacote = '10',
+url_imagem_pacote = 'd2391b17142da8c5ff9055acb4e0d4d5.png',
+st_pacote = '1';
+
+insert into tb_pacote set
+cd_pacote = '2',
+nm_destino_pacote = 'Maldivas',
+ds_periodo = '5 Dias e 4 Noites',
+ds_acomodacao = 'hotel 4 estrelas, pensão completa',
+qt_parcela_pacote = '10',
+url_imagem_pacote = 'a7304763e574ddd936cba3779b42b479.png',
+st_pacote = '1';
+
+insert into tb_pacote set
+cd_pacote = '3',
+nm_destino_pacote = 'Caribe',
+ds_periodo = '4 Dias e 3 Noites',
+ds_acomodacao = 'hotel 5 estrelas, pensão completa',
+qt_parcela_pacote = '10',
+url_imagem_pacote = '74cdc7a5cbd05d4b52c5410885a17636.png',
+st_pacote = '1';
+
+insert into tb_pacote set
+cd_pacote = '4',
+nm_destino_pacote = 'Natal',
+ds_periodo = '3 Dias e 2 Noites',
+ds_acomodacao = 'hotel 3 estrelas, pensão completa',
+qt_parcela_pacote = '10',
+url_imagem_pacote = 'c9c8c08fd8b499b11a6b7acfd5f0517a.png',
+st_pacote = '1';
