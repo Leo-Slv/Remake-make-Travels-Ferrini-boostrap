@@ -106,7 +106,7 @@ create table tb_servico(
 insert into tb_servico set
 cd_servico = '1',
 nm_servico = 'Café da Manhã',
-ds_servico = 'Self Service',
+ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
 url_imagem_servico = '47de9dc4443220f0c3ccb0584105df6e.png';
 
 insert into tb_servico set
