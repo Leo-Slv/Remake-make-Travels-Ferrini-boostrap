@@ -2,7 +2,7 @@ create database db_remake_travel;
 
 use db_remake_travel;
 
-drop database db_remake_travel;
+SET SQL_SAFE_UPDATES=0;
 
 create table tb_usuario (
 cd_usuario int primary key auto_increment,
@@ -21,22 +21,33 @@ create table tb_carousel (
 cd_carousel int auto_increment primary key,
 url_imagem_carousel varchar(100) not null,
 ds_carousel varchar(120),
-ic_active char(1),
+ic_active char(1) ,
 st_carousel char(1) not null
 );
 
 insert into tb_carousel set
-cd_carousel = '10',
+cd_carousel = '1',
 ds_carousel = 'Teste',
-url_imagem_carousel = 'ibiza.jfif',
+url_imagem_carousel = 'cs_hawaii.jpg',
 st_carousel = '1';
 
-select * from tb_carousel;
+insert into tb_carousel set
+cd_carousel = '2',
+ds_carousel = 'Teste',
+url_imagem_carousel = 'cs_caribe.jpg',
+st_carousel = '1';
 
-drop table tb_carousel;
+insert into tb_carousel set
+cd_carousel = '3',
+ds_carousel = 'Teste',
+url_imagem_carousel = 'cs_maldiva.jpg',
+st_carousel = '1';
 
-SET SQL_SAFE_UPDATES=0;
-delete from tb_carousel;
+insert into tb_carousel set
+cd_carousel = '4',
+ds_carousel = 'Teste',
+url_imagem_carousel = 'cs_natal.jpg',
+st_carousel = '1';
 
 create table tb_pacote(
   cd_pacote int auto_increment primary key,
@@ -48,47 +59,6 @@ create table tb_pacote(
   st_pacote char(1) not null default "1",
   ic_active char(1)
 );
-
-
-
-select * from tb_pacote;	
-
-drop table tb_pacote;
-
-SET SQL_SAFE_UPDATES=0;
-delete from tb_pacote;
-
-create table tb_servico(
-  cd_servico int auto_increment primary key,
-  nm_servico varchar(60) not null,
-  ds_servico longtext not null,
-  url_imagem_servico varchar(100) not null
-);
-
-insert into tb_servico set
-cd_servico = '1',
-nm_servico = 'Café da Manhã',
-ds_servico = 'Self Service',
-url_imagem_servico = '47de9dc4443220f0c3ccb0584105df6e.png';
-
-insert into tb_servico set
-cd_servico = '2',
-nm_servico = 'Almoço',
-ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
-url_imagem_servico = '5df86e4a2b24ec3a4299c9a2059b8fb0.webp';
-
-insert into tb_servico set
-cd_servico = '3',
-nm_servico = 'Jantar',
-ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
-url_imagem_servico = 'cc9752223316f10b4fa9810a07a49746.webp';
-
-select * from tb_servico;	
-
-drop table tb_servico;
-
-SET SQL_SAFE_UPDATES=0;
-delete from tb_servico;
 
 insert into tb_pacote set
 cd_pacote = '1',
@@ -125,3 +95,29 @@ ds_acomodacao = 'hotel 3 estrelas, pensão completa',
 qt_parcela_pacote = '10',
 url_imagem_pacote = 'c9c8c08fd8b499b11a6b7acfd5f0517a.png',
 st_pacote = '1';
+
+create table tb_servico(
+  cd_servico int auto_increment primary key,
+  nm_servico varchar(60) not null,
+  ds_servico longtext not null,
+  url_imagem_servico varchar(100) not null
+);
+
+insert into tb_servico set
+cd_servico = '1',
+nm_servico = 'Café da Manhã',
+ds_servico = 'Self Service',
+url_imagem_servico = '47de9dc4443220f0c3ccb0584105df6e.png';
+
+insert into tb_servico set
+cd_servico = '2',
+nm_servico = 'Almoço',
+ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
+url_imagem_servico = '5df86e4a2b24ec3a4299c9a2059b8fb0.webp';
+
+insert into tb_servico set
+cd_servico = '3',
+nm_servico = 'Jantar',
+ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
+url_imagem_servico = 'cc9752223316f10b4fa9810a07a49746.webp';
+
