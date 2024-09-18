@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary fixed-top">
   <a class="navbar-brand" href="index.php">Revisão</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
         <a class="nav-link" href="#pacotes">Pacotes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Serviços</a>
+        <a class="nav-link" href="#servicos">Serviços</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
