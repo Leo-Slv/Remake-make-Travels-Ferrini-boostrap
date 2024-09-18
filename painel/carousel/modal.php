@@ -33,7 +33,7 @@
                 Editar Imagem
             </div>
             <div class="modal-body">
-                <input type="text" name="cd" class="form-control" id="cd">
+                <input type="text" name="cd" class="form-control" id="cd" readonly="readonly">
                 <br>
                 <Textarea name="descricao" id="descricao" class="form-control" rows="5" placeholder="descrição"></Textarea>
                 <br>
