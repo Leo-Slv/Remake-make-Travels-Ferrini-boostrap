@@ -31,4 +31,16 @@ function ListarPacotes(){
       return $res;
     }
   }
+
+  function ListarCarousel(){
+    $sql = 'select 
+    url_imagem_carousel,
+    st_carousel,
+    ic_active
+    from tb_carousel';
+    $res =$GLOBALS['con']->query($sql);
+    if($res->num_rows > 0){
+      return $res;
+    }
+  }
 ?>
