@@ -1,11 +1,12 @@
 <?php
-function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, $status, $pagina){
+function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $valor, $parcela, $status, $pagina){
 
   $sql = 'insert into tb_pacote set
           url_imagem_pacote = "'.$imagem.'",
           nm_destino_pacote = "'.$destino.'",
           ds_periodo = "'.$periodo.'",
           ds_acomodacao = "'.$acomodacao.'",
+          vl_pacote = "'.$valor.'",
           qt_parcela_pacote = "'.$parcela.'",
           st_pacote = "'.$status.'"';
   $res = $GLOBALS['con']->query($sql);
@@ -35,7 +36,7 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, 
   }
 
   function ListarImagem(){
-    $sql = 'select cd_pacote, nm_destino_pacote, ds_periodo, ds_acomodacao, qt_parcela_pacote, url_imagem_pacote, st_pacote from tb_pacote';
+    $sql = 'select cd_pacote, nm_destino_pacote, ds_periodo, ds_acomodacao, vl_pacote, qt_parcela_pacote, url_imagem_pacote, st_pacote from tb_pacote';
     $res = $GLOBALS['con']->query($sql);
     if($res->num_rows > 0){
         return $res;
@@ -45,11 +46,12 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $parcela, 
     }
   }
 
-  function Editar(  $item, $destino, $periodo, $acomodacao, $parcela, $pagina){
+  function Editar(  $item, $destino, $periodo, $acomodacao, $valor, $parcela, $pagina){
     $sql = 'update tb_pacote set
             nm_destino_pacote = "'.$destino.'",
             ds_periodo = "'.$periodo.'",
             ds_acomodacao = "'.$acomodacao.'",
+            vl_pacote = "'.$valor.'",
             qt_parcela_pacote = "'.$parcela.'"
             where
             cd_pacote = '.$item;

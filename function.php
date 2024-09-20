@@ -6,7 +6,8 @@ function ListarPacotes(){
     cd_pacote, 
     nm_destino_pacote, 
     ds_periodo, 
-    ds_acomodacao, 
+    ds_acomodacao,
+    vl_pacote, 
     qt_parcela_pacote, 
     url_imagem_pacote,
     st_pacote

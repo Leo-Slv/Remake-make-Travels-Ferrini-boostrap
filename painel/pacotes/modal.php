@@ -14,6 +14,8 @@
                 <br>
                 <Textarea name="acomodacao" class="form-control" rows="3" placeholder="Descrição da Acomodação"></Textarea>
                 <br>
+                <input type="number" name="valor" class="form-control" rows="1" placeholder="Valor do Pacote"></input>
+                <br>
                 <label> Quantidade de Parcelas</label>
                 <select name="parcela" class="form-control" placeholder="Quantidade de Parcelas">
                     <option>1</option>
@@ -58,6 +60,9 @@
                 <Textarea name="periodo" id="periodo" class="form-control" rows="2" placeholder="Periodo"></Textarea>
                 <br>
                 <Textarea name="acomodacao" id="acomodacao" class="form-control" rows="3" placeholder="Descrição da Acomodação"></Textarea>
+                <br>
+                <label> Valor do pacote</label>
+                <input type="number" name="valor" id="valor" class="form-control" rows="1" placeholder="Valor do Pacote"></input>
                 <br>
                 <label> Quantidade de Parcelas</label>
                 <select name="parcela" id="parcela" class="form-control" placeholder="Quantidade de Parcelas">

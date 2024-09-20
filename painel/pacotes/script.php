@@ -24,6 +24,8 @@
     $('.modal #periodo').val(periodo);
     var acomodacao = $(this).attr('acomodacao');
     $('.modal #acomodacao').val(acomodacao);
+    var valor = $(this).attr('valor');
+    $('.modal #valor').val(valor);
     var parcela = $(this).attr('parcela');
     $('.modal #parcela').val(parcela);
   });
