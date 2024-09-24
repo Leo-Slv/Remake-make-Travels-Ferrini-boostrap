@@ -6,24 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="index.php">Revisão</a>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-nav-theme fixed-top nav-shadow p-3 font-tittle">
+  <a class="navbar-brand nav-hover" href="index.php">Revisão</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item nav-hover active">
+        <a class="navbar-brand" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#pacotes">Pacotes</a>
+      <li class="nav-item nav-hover">
+        <a class="navbar-brand" href="#pacotes">Pacotes</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#servicos">Serviços</a>
+      <li class="nav-item nav-hover">
+        <a class="navbar-brand" href="#servicos">Serviços</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item nav-hover dropdown">
+        <a class="navbar-brand dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
           Dropdown link
         </a>
         <div class="dropdown-menu">
@@ -32,11 +32,11 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contato">Contato</a>
+      <li class="nav-item nav-hover">
+        <a class="navbar-brand" href="#contato">Contato</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Entrar</a>
+      <li class="nav-item nav-hover">
+        <a class="navbar-brand" href="login.php">Entrar</a>
       </li>
     </ul>
   </div>
