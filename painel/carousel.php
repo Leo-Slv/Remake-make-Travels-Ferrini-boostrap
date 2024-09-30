@@ -88,7 +88,7 @@ require_once './carousel/script.php';
     if(!empty($_POST)){
         if($_POST['action'] == "Cadastrar"){
             $extensao = pathinfo($_FILES['imagem']['name'],PATHINFO_EXTENSION);
-            if($extensao == "png" || $_extensao == "jpg" || $extensao == "jpeg" ||
+            if($extensao == "png" || $extensao == "jpg" || $extensao == "jpeg" ||
             $extensao == "jfif" || $extensao == "webp"){
                 $uploaddir = '../img/carousel/';
                 if($extensao == "jpeg"){
