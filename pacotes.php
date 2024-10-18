@@ -51,7 +51,7 @@ require_once 'function.php';
                     </strong>
                     <br>
                     <br>
-                <a href="ver_pacote.php" class="btn btn-outline-success">ver mais</a>
+                    <a href="ver_pacote.php?pacote=<?php echo $l['cd_pacote']; ?>" class="btn btn-outline-success">ver mais</a>
             </div>    
         </div>
     </div>

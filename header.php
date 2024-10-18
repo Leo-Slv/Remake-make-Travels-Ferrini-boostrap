@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL ^ E_WARNING);
+    ini_set('display_errors', 1 );
+    require_once 'conect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,4 +16,3 @@
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-<?php require_once 'conect.php';

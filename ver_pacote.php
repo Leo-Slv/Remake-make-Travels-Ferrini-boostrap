@@ -2,17 +2,22 @@
     require_once 'header.php';
     $pacote = $_GET['pacote']; 
 ?>
-
+<style>
+    .mt-20{
+        margin-top: 5rem;
+    }
+</style>
 <body>
     <?php
        
+        require_once 'nav.php';
 
         $listar = DetalhesPacote($pacote);
 
         if(is_array($listar)){ 
     ?>
 
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-20">
             <div class="row">
                 <div class="col-sm-12">
                     <h1 class="font-weight-bolder">
