@@ -29,7 +29,7 @@
                 <div class="col-sm-12">
                     <h1 class="font-weight-bolder">
                         <!-- Exibe o nome do destino do pacote -->
-                        <?php echo $listar['nmDestino'] ?>
+                        <?php echo $listar['nmCidade'] ?>
                     </h1>
                 </div>
             </div>
@@ -54,9 +54,23 @@
         function DetalhesPacote($pacote){
             global $con; // Certifique-se de que a conexão está disponível globalmente
             
-            $sql = 'SELECT cd_pacote, nm_destino_pacote, ds_periodo, ds_acomodacao, vl_pacote, qt_parcela_pacote, url_imagem_pacote, st_pacote 
-                    FROM tb_pacote WHERE cd_pacote = ?';
-            
+            $sql = 'SELECT 
+                p.cd_pacote, 
+                p.ds_periodo, 
+                p.ds_acomodacao, 
+                p.vl_pacote, 
+                p.qt_parcela_pacote, 
+                p.url_imagem_pacote, 
+                p.st_pacote, 
+                c.nm_cidade -- Nome da cidade a partir da tabela tb_cidade
+            FROM 
+                tb_pacote p
+            INNER JOIN 
+                tb_cidade c 
+            ON 
+                p.id_cidade = c.cd_cidade
+            WHERE 
+                p.cd_pacote = ?';
             $res = $con->prepare($sql);
             
             if($res === false){
@@ -74,19 +88,19 @@
             }
 
             // Liga as colunas do resultado às variáveis
-            $res->bind_result($cdPacote, $nmDestino, $dsPeriodo, $dsAcomodacao, $vlPacote, $qtParcela, $urlImagem, $stPacote);
+            $res->bind_result($cdPacote, $dsPeriodo, $dsAcomodacao, $vlPacote, $qtParcela, $urlImagem, $stPacote, $nmCidade);
 
             // Verifica se há resultados e retorna como array
             if($res->fetch()){
                 return [
                     'cdPacote' => $cdPacote,
-                    'nmDestino' => $nmDestino,
                     'dsPeriodo' => $dsPeriodo,
                     'dsAcomodacao' => $dsAcomodacao,
                     'vlPacote' => $vlPacote,
                     'qtParcela' => $qtParcela,
                     'urlImagem' => $urlImagem,
-                    'stPacote' => $stPacote
+                    'stPacote' => $stPacote,
+                    'nmCidade' => $nmCidade
                 ];
             }
 
