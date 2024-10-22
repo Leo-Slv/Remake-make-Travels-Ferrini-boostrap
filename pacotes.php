@@ -36,7 +36,7 @@ require_once 'function.php';
             <img src="img/pacotes/<?php echo $l['url_imagem_pacote'];?>" alt="" class="card-img">
             <div class="card-body">
                 <h3 class= "font-weight-bolder">
-                    <?php echo $l['nm_destino_pacote']; ?>
+                    <?php echo $l['nm_cidade']; ?>
                     </h3>
                     <strong>Periodo:</strong>
                     <?php echo $l['ds_periodo']; ?>

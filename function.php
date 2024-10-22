@@ -2,17 +2,22 @@
 require_once 'conect.php';
 
 function ListarPacotes(){
-    $sql = 'select 
-    cd_pacote, 
-    nm_destino_pacote, 
-    ds_periodo, 
-    ds_acomodacao,
-    vl_pacote, 
-    qt_parcela_pacote, 
-    url_imagem_pacote,
-    st_pacote
-    from 
-    tb_pacote';
+    $sql = 'SELECT 
+  p.cd_pacote, 
+  p.ds_periodo, 
+  p.ds_acomodacao, 
+  p.vl_pacote, 
+  p.qt_parcela_pacote, 
+  p.url_imagem_pacote, 
+  p.st_pacote, 
+  p.ic_active,
+  c.nm_cidade -- Nome da cidade a partir da tabela tb_cidade
+FROM 
+  tb_pacote p
+INNER JOIN 
+  tb_cidade c 
+ON 
+  p.id_cidade = c.cd_cidade;';
     $res = $GLOBALS['con']->query($sql);
     if($res->num_rows > 0){
         return $res;

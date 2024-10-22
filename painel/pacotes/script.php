@@ -7,6 +7,18 @@
 
   });
 
+  $(document).on('click', '.uploadCidade', function(){
+    var cidade = $(this).attr('cidade');
+    $('.modal #cidade').val(cidade);
+
+  });
+
+  $(document).on('click', '.deleteCidade', function(){
+    var destino = $(this).attr('destino');
+    $('.modal #destino').val(destino);
+
+  });
+
   $(document).on('click', '.editimg', function(){
     var cd = $(this).attr('cd');
     $('.modal #cd').val(cd);

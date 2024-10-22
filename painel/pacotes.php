@@ -17,17 +17,26 @@ require_once './pacotes/script.php';
 
 <body>
     <?php require_once 'nav.php'; ?>
-    <div class="container-fluid">
+    <div class="container-fluid mb-3">
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                 <h3 class="font-weight-bolder">
                     Informações - Pacotes
                 </h3>
             </div>
-            <div class="col-sm-2">
+                <div class="col-sm-2">
+                <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#uploadCidade">
+                    + Cidades
+                </button>
+                <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteCidade">
+                    - Cidades
+                </button>
+                </div>
+                <div class="col-sm-2">
                 <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#upload">
                     + Pacotes
                 </button>
+                </div> 
             </div> 
         </div>
         <div class='row'>
@@ -54,7 +63,7 @@ require_once './pacotes/script.php';
                         <?php echo $flag; ?>
                     </span>
                     <strong>Destino:
-                    <?php echo $l['nm_destino_pacote']; ?>
+                    <?php echo $l['nm_cidade']; ?>
                     </strong>
                     <br>
                     <strong>Periodo:
@@ -88,7 +97,7 @@ require_once './pacotes/script.php';
                         data-target="#edit"
                         title="editar"
                         cd="<?php echo $l['cd_pacote']; ?>"
-                        destino="<?php echo $l['nm_destino_pacote'];?>"
+                        destino="<?php echo $l['id_cidade'];?>"
                         periodo="<?php echo $l['ds_periodo'];?>"
                         acomodacao="<?php echo $l['ds_acomodacao'];?>"
                         valor="<?php echo $l['vl_pacote'];?>"
@@ -146,7 +155,7 @@ require_once './pacotes/script.php';
                 move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile);
             
                 UploadImagemPacote($imagem, 
-                $_POST['destino'],
+                $_POST['cidade'],
                 $_POST['periodo'],
                 $_POST['acomodacao'],
                 $_POST['valor'],
@@ -185,10 +194,22 @@ require_once './pacotes/script.php';
             );
             }
         }
+        else if($_POST['action'] == "Cadastrar Cidade"){
+            CadastrarCidade(
+                $_POST['cidade'],
+                $pagina
+            );
+        }
+        else if($_POST['action'] == "Excluir Cidade"){
+            DeletarCidade(
+                $_POST['cidade'],
+                $pagina
+            );
+        }
         else if($_POST['action'] == "Alterar"){
             Editar(
                 $_POST['cd'],
-                $_POST['destino'],
+                $_POST['cidade'],
                 $_POST['periodo'],
                 $_POST['acomodacao'],
                 $_POST['valor'],

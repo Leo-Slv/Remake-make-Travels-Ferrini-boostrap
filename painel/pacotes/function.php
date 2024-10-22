@@ -1,9 +1,9 @@
 <?php
-function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $valor, $parcela, $status, $pagina){
+function UploadImagemPacote($imagem, $cidade, $periodo, $acomodacao, $valor, $parcela, $status, $pagina){
 
   $sql = 'insert into tb_pacote set
           url_imagem_pacote = "'.$imagem.'",
-          nm_destino_pacote = "'.$destino.'",
+          id_cidade = "'.$cidade.'",
           ds_periodo = "'.$periodo.'",
           ds_acomodacao = "'.$acomodacao.'",
           vl_pacote = "'.$valor.'",
@@ -36,7 +36,22 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $valor, $p
   }
 
   function ListarImagem(){
-    $sql = 'select cd_pacote, nm_destino_pacote, ds_periodo, ds_acomodacao, vl_pacote, qt_parcela_pacote, url_imagem_pacote, st_pacote from tb_pacote';
+    $sql = 'SELECT 
+  p.cd_pacote, 
+  p.ds_periodo, 
+  p.ds_acomodacao, 
+  p.vl_pacote, 
+  p.qt_parcela_pacote, 
+  p.url_imagem_pacote, 
+  p.st_pacote, 
+  p.ic_active,
+  c.nm_cidade -- Nome da cidade a partir da tabela tb_cidade
+FROM 
+  tb_pacote p
+INNER JOIN 
+  tb_cidade c 
+ON 
+  p.id_cidade = c.cd_cidade;';
     $res = $GLOBALS['con']->query($sql);
     if($res->num_rows > 0){
         return $res;
@@ -46,9 +61,9 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $valor, $p
     }
   }
 
-  function Editar(  $item, $destino, $periodo, $acomodacao, $valor, $parcela, $pagina){
+  function Editar(  $item, $cidade, $periodo, $acomodacao, $valor, $parcela, $pagina){
     $sql = 'update tb_pacote set
-            nm_destino_pacote = "'.$destino.'",
+            id_cidade = "'.$cidade.'",
             ds_periodo = "'.$periodo.'",
             ds_acomodacao = "'.$acomodacao.'",
             vl_pacote = "'.$valor.'",
@@ -91,4 +106,24 @@ function UploadImagemPacote($imagem, $destino, $periodo, $acomodacao, $valor, $p
           cd_pacote = '.$item;
     DML($sql, "Excluido com sucesso!", "Ops! Não foi excluído!", $pagina);
   }
+
+  function CadastrarCidade($cidade, $pagina){
+    $sql = 'insert into tb_cidade set
+          nm_cidade = "'.$cidade.'"';
+  $res = $GLOBALS['con']->query($sql);
+  if($res){
+    Confirma("Cadastrado com sucesso!", $pagina);
+  }
+  else{ Erro("Ops! Pacote não foi cadastrado!");
+  }
+  }
+
+  function DeletarCidade($cidade, $pagina){
+    $dir = "../img/pacotes/".$imagem;
+    unlink($dir);
+    $sql = 'delete from tb_cidade
+            where
+            cd_cidade = '.$cidade;
+      DML($sql, "Excluido com sucesso!", "Ops! Não foi excluído!", $pagina);
+    }
 ?>

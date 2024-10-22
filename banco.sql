@@ -2,7 +2,7 @@ create database db_remake_travel;
 
 use db_remake_travel;
 
-SET SQL_SAFE_UPDATES=0;
+SET SQL_SAFE_UPDATES=1;
 
 create table tb_usuario (
 cd_usuario int primary key auto_increment,
@@ -49,21 +49,43 @@ ds_carousel = 'Teste',
 url_imagem_carousel = 'cs_natal.jpg',
 st_carousel = '1';
 
-create table tb_pacote(
+create table tb_cidade(
+	cd_cidade int auto_increment primary key,
+	nm_cidade varchar(80) not null
+);	
+
+insert into tb_cidade set
+cd_cidade = '1',
+nm_cidade = 'Hawaii';
+
+insert into tb_cidade set
+cd_cidade = '2',
+nm_cidade = 'Maldivas';
+
+insert into tb_cidade set
+cd_cidade = '3',
+nm_cidade = 'Caribe';
+
+insert into tb_cidade set
+cd_cidade = '4',
+nm_cidade = 'Natal';
+
+create table tb_pacote (
   cd_pacote int auto_increment primary key,
-  nm_destino_pacote varchar(80) not null,
+  id_cidade int not null,
   ds_periodo varchar(80) not null,
   ds_acomodacao longtext not null,
   vl_pacote decimal(8,2) not null,
   qt_parcela_pacote int not null,
   url_imagem_pacote varchar(80) not null,
   st_pacote char(1) not null default "1",
-  ic_active char(1)
+  ic_active char(1),
+  foreign key (id_cidade) references tb_cidade(cd_cidade)
 );
 
 insert into tb_pacote set
 cd_pacote = '1',
-nm_destino_pacote = 'Hawaii',
+id_cidade = '1',
 ds_periodo = '5 Dias e 4 Noites',
 ds_acomodacao = 'hotel 4 estrelas, pensão completa',
 vl_pacote = '150',
@@ -73,7 +95,7 @@ st_pacote = '1';
 
 insert into tb_pacote set
 cd_pacote = '2',
-nm_destino_pacote = 'Maldivas',
+id_cidade = '2',
 ds_periodo = '5 Dias e 4 Noites',
 ds_acomodacao = 'hotel 4 estrelas, pensão completa',
 vl_pacote = '150',
@@ -83,7 +105,7 @@ st_pacote = '1';
 
 insert into tb_pacote set
 cd_pacote = '3',
-nm_destino_pacote = 'Caribe',
+id_cidade = '3',
 ds_periodo = '4 Dias e 3 Noites',
 ds_acomodacao = 'hotel 5 estrelas, pensão completa',
 vl_pacote = '150',
@@ -93,7 +115,7 @@ st_pacote = '1';
 
 insert into tb_pacote set
 cd_pacote = '4',
-nm_destino_pacote = 'Natal',
+id_cidade = '4',
 ds_periodo = '3 Dias e 2 Noites',
 ds_acomodacao = 'hotel 3 estrelas, pensão completa',
 vl_pacote = '150',
