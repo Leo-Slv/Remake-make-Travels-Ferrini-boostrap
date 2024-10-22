@@ -14,13 +14,13 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item nav-hover active">
-        <a class="navbar-brand" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item nav-hover">
-        <a class="navbar-brand" href="#pacotes">Pacotes</a>
+        <a class="navbar-brand" href="index.php#pacotes">Pacotes</a>
       </li>
       <li class="nav-item nav-hover">
-        <a class="navbar-brand" href="#servicos">Serviços</a>
+        <a class="navbar-brand" href="index.php#servicos">Serviços</a>
       </li>
       <li class="nav-item nav-hover dropdown">
         <a class="navbar-brand dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">

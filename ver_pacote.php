@@ -2,22 +2,29 @@
     require_once 'header.php';
     $pacote = $_GET['pacote']; 
 ?>
-<style>
-    .mt-20{
-        margin-top: 5rem;
-    }
-</style>
 <body>
-    <?php
+<?php
        
         require_once 'nav.php';
+?>
+
+        <div class="container-fluid mt-20">
+            <div class="row">
+                <div class="cols-sm-12" id="fundos">
+
+                </div>
+            </div>
+        </div>
+
+
+<?php
 
         $listar = DetalhesPacote($pacote);
 
         if(is_array($listar)){ 
-    ?>
+?>
 
-        <div class="container-fluid mt-20">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
                     <h1 class="font-weight-bolder">
@@ -27,13 +34,20 @@
                 </div>
             </div>
         </div>
-
+        <style>
+            .mt-20{
+                margin-top: 3rem;
+            }
+            #fundos{
+                height: 41rem;
+                width: 100%;
+                background-image: url("./img/pacotes/<?php echo $listar['urlImagem'];?>");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        </style>
     <?php
-        } else {
-            // Mensagem caso não seja encontrado o pacote
-            echo "<div class='container'><h2>Pacote não encontrado.</h2></div>";
-        }
-
+        } 
         require_once 'footer.php';
 
         // Função que busca os detalhes do pacote
