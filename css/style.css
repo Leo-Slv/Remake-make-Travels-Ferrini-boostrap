@@ -9,7 +9,9 @@ body {
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
-
+#pacotes .card-img{
+  height: 200px;
+}
 @media (max-width: 600px) {
   .carousel {
     display: none;

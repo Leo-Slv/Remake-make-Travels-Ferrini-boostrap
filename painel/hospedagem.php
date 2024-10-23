@@ -33,7 +33,7 @@ require_once './hospedagem/script.php';
         </div>
         <div class='row ml-2'>
             <?php
-            $listar = ListarImagem();
+            $listar = ListarHospedagem();
             if($listar){
                 foreach($listar as $l){
                     if($l['st_hospedagem'] == "1"){
@@ -66,7 +66,7 @@ require_once './hospedagem/script.php';
                     <?php echo $l['tp_hospedagem']; ?>
                     </strong>
                     <br>
-                    <strong>Valor do hospedagem: R$
+                    <strong>Valor da hospedagem: R$
                     <?php echo $l['vl_hospedagem']; ?>
                     </strong>
                     <br>
@@ -75,11 +75,11 @@ require_once './hospedagem/script.php';
                     </strong>
                     <br>
                     <strong>Data de entrada:
-                    <?php echo $l['en_hospedagem']; ?>
+                    <?php echo $l['en_hospedagem_formatada']; ?>
                     </strong>
                     <br>
                     <strong>Data de saída:
-                    <?php echo $l['sd_hospedagem']; ?>
+                    <?php echo $l['sd_hospedagem_formatada']; ?>
                     </strong>
                     <br>
                 </div>

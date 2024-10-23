@@ -19,32 +19,34 @@ function UploadImagemHospedagem($imagem, $cidade, $rua, $tipo, $valor, $parcela,
   }
 }
 
-  function ListarImagem(){
-    $sql = 'SELECT 
-  h.cd_hospedagem, 
-  h.rua_hospedagem, 
-  h.tp_hospedagem,
-  h.vl_hospedagem, 
-  h.qt_parcela_hospedagem,
-  h.en_hospedagem,
-  h.sd_hospedagem, 
-  h.url_imagem_hospedagem, 
-  h.st_hospedagem, 
-  c.nm_cidade -- Nome da cidade a partir da tabela tb_cidade
-FROM 
-  tb_hospedagem h
-INNER JOIN 
-  tb_cidade c 
-ON 
-  h.id_cidade = c.cd_cidade;';
-    $res = $GLOBALS['con']->query($sql);
-    if($res->num_rows > 0){
-        return $res;
-    }
-    else{
-      echo '<div class="ml-3">Sem hospedagens cadastradas!</div>';
-    }
+function ListarHospedagem(){
+  $sql = 'SELECT 
+      h.cd_hospedagem, 
+      h.rua_hospedagem, 
+      h.tp_hospedagem,
+      h.vl_hospedagem, 
+      h.qt_parcela_hospedagem,
+      DATE_FORMAT(h.en_hospedagem, "%d/%m/%y") AS en_hospedagem_formatada, 
+      DATE_FORMAT(h.sd_hospedagem, "%d/%m/%y") AS sd_hospedagem_formatada, 
+      h.url_imagem_hospedagem, 
+      h.st_hospedagem, 
+      c.nm_cidade
+  FROM 
+      tb_hospedagem h
+  INNER JOIN 
+      tb_cidade c 
+  ON 
+      h.id_cidade = c.cd_cidade;';
+  
+  $res = $GLOBALS['con']->query($sql);
+  if($res->num_rows > 0){
+      return $res;
   }
+  else{
+      echo '<div class="ml-3">Sem hospedagens cadastradas!</div>';
+  }
+}
+
 
   function Editar(  $item, $cidade, $rua, $tipo, $valor, $parcela, $entrada, $saida, $pagina){
     $sql = 'update tb_hospedagem set

@@ -90,7 +90,7 @@ ds_periodo = '5 Dias e 4 Noites',
 ds_acomodacao = 'hotel 4 estrelas, pensão completa',
 vl_pacote = '150',
 qt_parcela_pacote = '10',
-url_imagem_pacote = 'd2391b17142da8c5ff9055acb4e0d4d5.png',
+url_imagem_pacote = '0006ef1069b42e48e4216faae865cd04.jpg',
 st_pacote = '1';
 
 insert into tb_pacote set
@@ -100,7 +100,7 @@ ds_periodo = '5 Dias e 4 Noites',
 ds_acomodacao = 'hotel 4 estrelas, pensão completa',
 vl_pacote = '150',
 qt_parcela_pacote = '10',
-url_imagem_pacote = 'a7304763e574ddd936cba3779b42b479.png',
+url_imagem_pacote = 'a0d1c6b2a861126335d26b56f89deaa8.jpg',
 st_pacote = '1';
 
 insert into tb_pacote set
@@ -110,7 +110,7 @@ ds_periodo = '4 Dias e 3 Noites',
 ds_acomodacao = 'hotel 5 estrelas, pensão completa',
 vl_pacote = '150',
 qt_parcela_pacote = '10',
-url_imagem_pacote = '74cdc7a5cbd05d4b52c5410885a17636.png',
+url_imagem_pacote = 'a096abfaa21eb2964dbd67b7203e25f2.jpg',
 st_pacote = '1';
 
 insert into tb_pacote set
