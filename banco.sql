@@ -151,7 +151,7 @@ create table tb_hospedagem(
 
  insert into tb_hospedagem set
  cd_hospedagem = '2',
- id_cidade = '2',
+ id_cidade = '1',
  rua_hospedagem ='Kalakaua Avenue',
  tp_hospedagem = '1x quarto standard casal',
  vl_hospedagem = '799',
@@ -163,7 +163,7 @@ create table tb_hospedagem(
 
  insert into tb_hospedagem set
  cd_hospedagem = '3',
- id_cidade = '3',
+ id_cidade = '1',
  rua_hospedagem ='King Street',
  tp_hospedagem = '1x quarto triplo standard',
  vl_hospedagem = '1220',
@@ -175,7 +175,7 @@ create table tb_hospedagem(
 
  insert into tb_hospedagem set
  cd_hospedagem = '4',
- id_cidade = '4',
+ id_cidade = '1',
  rua_hospedagem ='Hana Highway',
  tp_hospedagem = '1x quarto triplo standard',
  vl_hospedagem = '1499',
@@ -185,8 +185,6 @@ create table tb_hospedagem(
  url_imagem_hospedagem = '2a1591c3d8b54b3312a5abc3a15ffeba.webp',
  st_hospedagem = '1';
  
- 
- select*from tb_hospedagem;
 create table tb_servico(
   cd_servico int auto_increment primary key,
   nm_servico varchar(60) not null,
