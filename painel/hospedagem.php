@@ -3,6 +3,8 @@ require_once 'header.php';
 require_once './hospedagem/function.php';
 require_once './hospedagem/modal.php';
 require_once './hospedagem/script.php';
+require_once './cidade/modal.php';
+require_once './cidade/function.php';
 
 
 ?>
@@ -19,14 +21,22 @@ require_once './hospedagem/script.php';
     <?php require_once 'nav.php'; ?>
     <div class="container-fluid mb-3">
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                 <h3 class="font-weight-bolder">
                     Informações - Hospedagens
                 </h3>
             </div>
                 <div class="col-sm-2">
+                <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#uploadCidade">
+                    + Cidades
+                </button>
+                <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteCidade">
+                    - Cidades
+                </button>
+                </div>
+                <div class="col-sm-2">
                 <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#upload">
-                    + Hospedagens
+                    + Pacotes
                 </button>
                 </div> 
             </div> 
@@ -211,7 +221,18 @@ require_once './hospedagem/script.php';
                 $pagina
             );
         }
-
+        else if($_POST['action'] == "Cadastrar Cidade"){
+            CadastrarCidade(
+                $_POST['cidade'],
+                $pagina
+            );
+        }
+        else if($_POST['action'] == "Excluir Cidade"){
+            DeletarCidade(
+                $_POST['cidade'],
+                $pagina
+            );
+        }
         else if($_POST['action'] == "Alterar Status"){
             EditarStatus(
                 $_POST['cd'],

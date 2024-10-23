@@ -148,6 +148,42 @@ create table tb_hospedagem(
  sd_hospedagem = '2024-10-25',
  url_imagem_hospedagem = 'd2391b17142da8c5ff9055acb4e0d4d5.png',
  st_hospedagem = '1';
+
+ insert into tb_hospedagem set
+ cd_hospedagem = '2',
+ id_cidade = '2',
+ rua_hospedagem ='Kalakaua Avenue',
+ tp_hospedagem = '1x quarto standard casal',
+ vl_hospedagem = '799',
+ qt_parcela_hospedagem = '8',
+ en_hospedagem = '2024-10-31',
+ sd_hospedagem = '2024-11-02',
+ url_imagem_hospedagem = 'd4d1a437ab77ecf1a6f612283ecb90b2.jpg',
+ st_hospedagem = '1';
+
+ insert into tb_hospedagem set
+ cd_hospedagem = '3',
+ id_cidade = '3',
+ rua_hospedagem ='King Street',
+ tp_hospedagem = '1x quarto triplo standard',
+ vl_hospedagem = '1220',
+ qt_parcela_hospedagem = '10',
+ en_hospedagem = '2024-10-26',
+ sd_hospedagem = '2024-10-31',
+ url_imagem_hospedagem = '4e2ceefad03b0b2861a3668d443dca69.jpg',
+ st_hospedagem = '1';
+
+ insert into tb_hospedagem set
+ cd_hospedagem = '4',
+ id_cidade = '4',
+ rua_hospedagem ='Hana Highway',
+ tp_hospedagem = '1x quarto triplo standard',
+ vl_hospedagem = '1499',
+ qt_parcela_hospedagem = '10',
+ en_hospedagem = '2024-10-23',
+ sd_hospedagem = '2024-10-31',
+ url_imagem_hospedagem = '2a1591c3d8b54b3312a5abc3a15ffeba.webp',
+ st_hospedagem = '1';
  
  
  select*from tb_hospedagem;

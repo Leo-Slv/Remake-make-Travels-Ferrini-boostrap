@@ -3,6 +3,8 @@ require_once 'header.php';
 require_once './pacotes/function.php';
 require_once './pacotes/modal.php';
 require_once './pacotes/script.php';
+require_once './cidade/modal.php';
+require_once './cidade/function.php';
 
 
 ?>
