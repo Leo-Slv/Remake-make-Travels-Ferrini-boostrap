@@ -123,6 +123,34 @@ qt_parcela_pacote = '10',
 url_imagem_pacote = 'c9c8c08fd8b499b11a6b7acfd5f0517a.png',
 st_pacote = '1';
 
+create table tb_hospedagem(
+   cd_hospedagem int auto_increment primary key,
+   id_cidade int not null,
+   rua_hospedagem varchar(100) not null,
+   tp_hospedagem varchar(100) not null,
+   vl_hospedagem decimal(8,2) not null,
+   qt_parcela_hospedagem int not null,
+   en_hospedagem date not null,
+   sd_hospedagem date not null,
+   url_imagem_hospedagem varchar(80) not null,
+   st_hospedagem char(1) not null default "1",
+   foreign key (id_cidade) references tb_cidade(cd_cidade)
+);
+
+ insert into tb_hospedagem set
+ cd_hospedagem = '1',
+ id_cidade = '1',
+ rua_hospedagem ='Front Street',
+ tp_hospedagem = '1x quarto standard casal',
+ vl_hospedagem = '755',
+ qt_parcela_hospedagem = '10',
+ en_hospedagem = '2024-10-22',
+ sd_hospedagem = '2024-10-25',
+ url_imagem_hospedagem = 'd2391b17142da8c5ff9055acb4e0d4d5.png',
+ st_hospedagem = '1';
+ 
+ 
+ select*from tb_hospedagem;
 create table tb_servico(
   cd_servico int auto_increment primary key,
   nm_servico varchar(60) not null,
