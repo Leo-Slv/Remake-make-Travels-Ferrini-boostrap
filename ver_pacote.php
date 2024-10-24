@@ -10,7 +10,6 @@ require_once 'nav.php';
 <div class="container-fluid mt-20">
     <div class="row">
         <div class="cols-sm-12" id="fundos">
-
         </div>
     </div>
 </div>
@@ -21,26 +20,29 @@ $listar = DetalhesPacote($pacote);
 if (is_array($listar)) { 
     $nmCidade = $listar['nmCidade']; // Defina nmCidade aqui
 ?>
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="font-weight-bolder text-center">
+                <h4 class="font-weight-bolder">
                     <!-- Exibe o nome do destino do pacote -->
-                    <?php echo $listar['nmCidade']; ?>
-                </h1>
+                    Hospedagens no <?php echo $listar['nmCidade']; ?>
+                </h4>
             </div>
         </div>
     </div>
     <style>
         .mt-20 {
-            margin-top: 3.6rem;
+            margin-top: 4.5rem;
+        }
+        .mt-30 {
+            margin-top: 180px;
         }
         #fundos {
             background-image: url("./img/pacotes/<?php echo $listar['urlImagem']; ?>");
             background-size: 100% 100%; /* Estica a imagem para cobrir 100% da largura e altura */
             background-position: center; 
             background-repeat: no-repeat;
-            height: 70vh; 
+            height: 65vh; 
             width: 100%; 
         }
         .hide {
@@ -50,6 +52,45 @@ if (is_array($listar)) {
             overflow: hidden;  
             opacity: 0;      
         }
+        .card-img-h{
+            height: 378px;
+            background-size: 100%; /* Estica a imagem para cobrir 100% da largura e altura */
+            background-position: center; 
+            background-repeat: no-repeat;
+            width: 100%; 
+            border-radius:10px;
+            }
+            .mx-10 {
+                padding-left:350px;
+                padding-top:10px;
+                padding-right:175px;
+                padding-bottom:0px;
+                
+            }
+
+            .card {
+                margin-bottom: 15%;
+                border: none;
+                width: 85%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius:10px;
+                }
+
+            .card:hover {
+                transition: 0.7s;
+                scale: 1.05;
+                }
+            .inside-box{
+                border: 1px solid #ccc; /* Borda */
+                border-radius: 8px; /* Borda arredondada */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor da caixa */
+                margin: 20px auto; /* Margem automática para centralizar horizontalmente */
+                height:200px;
+            }
+            .border{
+                border-right: 1px solid #ccc; /* Borda */
+                
+            }
     </style>
 <?php
 } 
@@ -60,15 +101,6 @@ $listarH = DetalhesHospedagem($nmCidade); // Passa o nome da cidade aqui
 
 if (is_array($listarH) && count($listarH) > 0) { 
 ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="font-weight-bolder text-center">
-                    <!-- Exibe todos os tipos de hospedagem -->
-                    Tipos de Hospedagem em <?php echo $nmCidade; ?>:
-                </h1>
-            </div>
-        </div>
         <div class="row">
             <?php foreach ($listarH as $hospedagem) { 
                 // Verifica o estado da hospedagem
@@ -77,13 +109,46 @@ if (is_array($listarH) && count($listarH) > 0) {
                     $st = 'hide'; // Aplica a classe CSS hide se a hospedagem não estiver ativa
                 }
             ?>
-                <div class="col-sm-4 text-center <?php echo $st; ?>">
-                    <div class="hospedagem-item">
-                        <h2><?php echo $hospedagem['tpHospedagem']; ?></h2>
-                        <p>Endereço: <?php echo $hospedagem['ruaHospedagem']; ?></p>
-                        <p>Valor: R$ <?php echo number_format($hospedagem['vlHospedagem'], 2, ',', '.'); ?></p>
-                        <p>Parcelas: <?php echo $hospedagem['qtParcelaHospedagem']; ?></p>
-                        <!-- Adicione mais informações conforme necessário -->
+               <div class="col-sm-12 mx-10 <?php echo $st; ?>">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <!-- Primeira Coluna -->
+                        <div class="col-md-4 text-center">
+                            <img src="./img/hospedagem/<?php echo $hospedagem['urlImagemHospedagem']; ?>" alt="Imagem do Hotel" class="card-img-h">
+                            
+                        </div>
+
+                        <!-- Segunda Coluna -->
+                        <div class="col-md-4 border">
+                            <div class="card-body">
+                                <h6 class="card-title font-weight-bolder">Nome do Hotel</h6>
+                                <p class="card-text">Rua: <?php echo $hospedagem['ruaHospedagem']; ?></p>
+                                <p class="card-text"><small class="text-muted">Detalhes da Hospedagem</small></p>
+                                <div class="inside-box p-4">
+                                    <p class="card-text"><small class="text-muted"><?php echo $hospedagem['tpHospedagem']; ?></small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terceira Coluna -->
+                        <div class="col-md-4">
+                            <div class="card-body mt-30">
+                                <div class="d-flex col justify-content-between">
+                                <p class="card-text">Total do pacote:</p>
+                                <strong>R$ <?php echo number_format($hospedagem['vlHospedagem'], 2, ',', '.'); ?></strong>
+                                </div>
+                                <div class="d-flex row justify-content-center mb-2">
+                                    <a href="" class="btn btn-outline-warning">Selecionar Hotel</a>
+                                </div>
+                                <div class="d-flex row justify-content-center">
+                                    <p class="card-text">Taxas inclusas em até: <strong><?php echo $hospedagem['qtParcelaHospedagem']; ?>X</strong></p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                     </div>
                 </div>
             <?php } ?>
@@ -219,3 +284,18 @@ function DetalhesHospedagem($nmCidade) {
 }
 ?>
 </body>
+
+<script>
+var stars = document.querySelectorAll('.star-icon');
+                  
+document.addEventListener('click', function(e){
+  var classStar = e.target.classList;
+  if(!classStar.contains('ativo')){
+    stars.forEach(function(star){
+      star.classList.remove('ativo');
+    });
+    classStar.add('ativo');
+    console.log(e.target.getAttribute('data-avaliacao'));
+  }
+});
+</script>
