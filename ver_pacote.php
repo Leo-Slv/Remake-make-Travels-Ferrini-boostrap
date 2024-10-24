@@ -35,7 +35,7 @@ if (is_array($listar)) {
             margin-top: 4.5rem;
         }
         .mt-30 {
-            margin-top: 180px;
+            margin-top: 225px;
         }
         #fundos {
             background-image: url("./img/pacotes/<?php echo $listar['urlImagem']; ?>");
