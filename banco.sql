@@ -126,6 +126,8 @@ st_pacote = '1';
 create table tb_hospedagem(
    cd_hospedagem int auto_increment primary key,
    id_cidade int not null,
+   nm_hotel varchar(100) not null,
+   nt_hotel varchar(100) not null,
    rua_hospedagem varchar(100) not null,
    tp_hospedagem varchar(100) not null,
    vl_hospedagem decimal(8,2) not null,
@@ -140,6 +142,8 @@ create table tb_hospedagem(
  insert into tb_hospedagem set
  cd_hospedagem = '1',
  id_cidade = '1',
+ nm_hotel = 'Sunrise Hotel',
+ nt_hotel = '3',
  rua_hospedagem ='Front Street',
  tp_hospedagem = '1x quarto standard casal',
  vl_hospedagem = '755',
@@ -152,6 +156,8 @@ create table tb_hospedagem(
  insert into tb_hospedagem set
  cd_hospedagem = '2',
  id_cidade = '1',
+ nm_hotel = 'Star by the Sea Inn',
+ nt_hotel = '4',
  rua_hospedagem ='Kalakaua Avenue',
  tp_hospedagem = '1x quarto standard casal',
  vl_hospedagem = '799',
@@ -160,10 +166,13 @@ create table tb_hospedagem(
  sd_hospedagem = '2024-11-02',
  url_imagem_hospedagem = 'd4d1a437ab77ecf1a6f612283ecb90b2.jpg',
  st_hospedagem = '1';
+ 
 
  insert into tb_hospedagem set
  cd_hospedagem = '3',
  id_cidade = '1',
+ nm_hotel = 'Green Paradise Resort',
+ nt_hotel = '5',
  rua_hospedagem ='King Street',
  tp_hospedagem = '1x quarto triplo standard',
  vl_hospedagem = '1220',
@@ -176,6 +185,8 @@ create table tb_hospedagem(
  insert into tb_hospedagem set
  cd_hospedagem = '4',
  id_cidade = '1',
+ nm_hotel = 'Bella Vista Hotel',
+ nt_hotel = '3',
  rua_hospedagem ='Hana Highway',
  tp_hospedagem = '1x quarto triplo standard',
  vl_hospedagem = '1499',

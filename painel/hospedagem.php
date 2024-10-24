@@ -36,7 +36,7 @@ require_once './cidade/function.php';
                 </div>
                 <div class="col-sm-2">
                 <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#upload">
-                    + Pacotes
+                    + Hospedagens
                 </button>
                 </div> 
             </div> 
@@ -66,6 +66,10 @@ require_once './cidade/function.php';
                     </span>
                     <strong>Destino:
                     <?php echo $l['nm_cidade']; ?>
+                    </strong>
+                    <br>
+                    <strong>Nome do Hotel:
+                    <?php echo $l['nm_hotel']; ?>
                     </strong>
                     <br>
                     <strong>Rua:
@@ -108,6 +112,7 @@ require_once './cidade/function.php';
                         title="editar"
                         cd="<?php echo $l['cd_hospedagem']; ?>"
                         destino="<?php echo $l['id_cidade'];?>"
+                        hotel="<?php echo $l['nm_hotel'];?>"
                         rua="<?php echo $l['rua_hospedagem'];?>"
                         tipo="<?php echo $l['tp_hospedagem'];?>"
                         valor="<?php echo $l['vl_hospedagem'];?>"
@@ -168,6 +173,8 @@ require_once './cidade/function.php';
             
                 UploadImagemHospedagem($imagem, 
                 $_POST['cidade'],
+                $_POST['hotel'],
+                $_POST['nota'],
                 $_POST['rua'],
                 $_POST['tipo'],
                 $_POST['valor'],
@@ -212,6 +219,8 @@ require_once './cidade/function.php';
             Editar(
                 $_POST['cd'],
                 $_POST['cidade'],
+                $_POST['hotel'],
+                $_POST['nota'],
                 $_POST['rua'],
                 $_POST['tipo'],
                 $_POST['valor'],

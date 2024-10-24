@@ -1,9 +1,11 @@
 <?php
-function UploadImagemHospedagem($imagem, $cidade, $rua, $tipo, $valor, $parcela, $entrada, $saida, $status, $pagina){
+function UploadImagemHospedagem($imagem, $cidade, $hotel, $nota, $rua, $tipo, $valor, $parcela, $entrada, $saida, $status, $pagina){
 
   $sql = 'insert into tb_hospedagem set
           url_imagem_hospedagem = "'.$imagem.'",
           id_cidade = "'.$cidade.'",
+          nm_hotel = "'.$hotel.'",
+          nt_hotel = "'.$nota.'",
           rua_hospedagem = "'.$rua.'",
           tp_hospedagem = "'.$tipo.'",
           vl_hospedagem = "'.$valor.'",
@@ -21,7 +23,9 @@ function UploadImagemHospedagem($imagem, $cidade, $rua, $tipo, $valor, $parcela,
 
 function ListarHospedagem(){
   $sql = 'SELECT 
-      h.cd_hospedagem, 
+      h.cd_hospedagem,
+      h.nm_hotel,
+      h.nt_hotel, 
       h.rua_hospedagem, 
       h.tp_hospedagem,
       h.vl_hospedagem, 
@@ -48,9 +52,11 @@ function ListarHospedagem(){
 }
 
 
-  function Editar(  $item, $cidade, $rua, $tipo, $valor, $parcela, $entrada, $saida, $pagina){
+  function Editar(  $item, $cidade, $hotel, $nota, $rua, $tipo, $valor, $parcela, $entrada, $saida, $pagina){
     $sql = 'update tb_hospedagem set
             id_cidade = "'.$cidade.'",
+            nm_hotel = "'.$hotel.'",
+            nt_hotel = "'.$nota.'",
             rua_hospedagem = "'.$rua.'",
             tp_hospedagem = "'.$tipo.'",
             vl_hospedagem = "'.$valor.'",

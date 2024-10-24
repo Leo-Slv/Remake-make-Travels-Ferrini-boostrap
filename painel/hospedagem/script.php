@@ -21,6 +21,10 @@
     $('.modal #cd').val(cd);
     var cidade = $(this).attr('cidade');
     $('.modal #cidade').val(cidade);
+    var hotel = $(this).attr('hotel');
+    $('.modal #hotel').val(hotel);
+    var nota = $(this).attr('nota');
+    $('.modal #nota').val(nota);
     var rua = $(this).attr('rua');
     $('.modal #rua').val(rua);
     var tipo = $(this).attr('tipo');

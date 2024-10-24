@@ -35,6 +35,12 @@ if ($result->num_rows > 0) {
                     <?php endforeach; ?>
                 </select>
                 <br>
+                <label> Nome do Hotel</label>
+                <Textarea name="hotel" class="form-control" rows="1" placeholder="Hotel"></Textarea>
+                <br>
+                <label> Quantidade de estrelas</label>
+                <input type="number" class="form-control" name="nota" min="1" max="5" step="1">
+                <br>
                 <Textarea name="rua" class="form-control" rows="2" placeholder="Rua"></Textarea>
                 <br>
                 <Textarea name="tipo" class="form-control" rows="3" placeholder="Descrição da Acomodação"></Textarea>
@@ -95,6 +101,12 @@ if ($result->num_rows > 0) {
                         </option>
                     <?php endforeach; ?>
                 </select>
+                <br>
+                <label> Nome do Hotel</label>
+                <Textarea name="hotel" id="hotel" class="form-control" rows="1" placeholder="Hotel"></Textarea>
+                <br>
+                <label> Quantidade de estrelas</label>
+                <input type="number" class="form-control" id="nota" name="nota" min="1" max="5" step="1">
                 <br>
                 <Textarea name="rua" id="rua" class="form-control" rows="2" placeholder="Rua"></Textarea>
                 <br>

@@ -45,7 +45,7 @@ if ($nmCidade) {
         }
         #fundos {
             background-image: url("./img/pacotes/<?php echo $listar['urlImagem']; ?>");
-            background-size: 100% 100%; /* Estica a imagem para cobrir 100% da largura e altura */
+            background-size: 100% 100%;
             background-position: center; 
             background-repeat: no-repeat;
             height: 65vh; 
@@ -58,45 +58,50 @@ if ($nmCidade) {
             overflow: hidden;  
             opacity: 0;      
         }
-        .card-img-h{
-            height: 378px;
-            background-size: 100%; /* Estica a imagem para cobrir 100% da largura e altura */
+        .card-img-h {
+            height: 400px;
+            background-size: 100%;
             background-position: center; 
             background-repeat: no-repeat;
             width: 100%; 
-            border-radius:10px;
-            }
-            .mx-10 {
-                padding-left:350px;
-                padding-top:10px;
-                padding-right:175px;
-                padding-bottom:0px;
-                
-            }
-
-            .card {
-                margin-bottom: 15%;
-                border: none;
-                width: 85%;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                border-radius:10px;
-                }
-
-            .card:hover {
-                transition: 0.7s;
-                scale: 1.05;
-                }
-            .inside-box{
-                border: 1px solid #ccc; /* Borda */
-                border-radius: 8px; /* Borda arredondada */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor da caixa */
-                margin: 20px auto; /* Margem automática para centralizar horizontalmente */
-                height:200px;
-            }
-            .border{
-                border-right: 1px solid #ccc; /* Borda */
-                
-            }
+            border-radius: 10px;
+        }
+        .mx-10 {
+            padding-left: 350px;
+            padding-top: 10px;
+            padding-right: 175px;
+            padding-bottom: 0px;   
+        }
+        .card {
+            margin-bottom: 15%;
+            border: none;
+            width: 85%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+        .card:hover {
+            transition: 0.7s;
+            scale: 1.05;
+        }
+        .inside-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+        .border {
+            border-right: 1px solid #ccc; 
+        }
+        .fs-2 {
+            font-size: 14px;
+        }
+        .estrela {
+            color: #ccc;
+            font-size: 18px; 
+        }
+        .estrela.ativa {
+            color: #f39c12; 
+        }
     </style>
 <?php
 } 
@@ -106,63 +111,81 @@ if ($nmCidade) {
 $listarH = DetalhesHospedagem($nmCidade); // Chame a função de hospedagem
 
 if (is_array($listarH) && count($listarH) > 0) { 
+    // Ordena o array de hospedagem pela quantidade de estrelas (ntHotel)
+    usort($listarH, function($a, $b) {
+        return $b['ntHotel'] <=> $a['ntHotel']; // Ordena em ordem decrescente
+    });
+
     ?>
-        <div class="row">
-            <?php foreach ($listarH as $hospedagem) { 
-                $st = ($hospedagem['stHospedagem'] == "0") ? 'hide' : '';
-            ?>
-                <div class="col-sm-12 mx-10 <?php echo $st; ?>">
-                    <div class="card mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-md-4 text-center">
-                                <img src="./img/hospedagem/<?php echo htmlspecialchars($hospedagem['urlImagemHospedagem']); ?>" alt="Imagem do Hotel" class="card-img-h">
-                            </div>
-                            <div class="col-md-4 border">
-                                <div class="card-body">
-                                    <h6 class="card-title font-weight-bolder">Nome do Hotel</h6>
-                                    <p class="card-text">Rua: <?php echo htmlspecialchars($hospedagem['ruaHospedagem']); ?></p>
-                                    <p class="card-text"><small class="text-muted">Detalhes da Hospedagem</small></p>
-                                    <div class="inside-box p-2">
-                                        <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($hospedagem['tpHospedagem']); ?></small></p>
-                                        <p class="card-text"><small class="text-muted"><strong>Serviços inclusos:</strong></small></p>
-                                        <div class="d-flex col">
-                                        <?php if (!empty($hospedagem['servicos'])) { ?>
-                                        <?php foreach ($hospedagem['servicos'] as $servico) { ?>
-                                            <p class="card-text mr-1 mb-1"><small class="text-muted"><?php echo htmlspecialchars($servico['nmServico']);?>.</small></p>
-                                        <?php } ?>
-                                        <?php } else { ?>
-                                        <p class="card-text"><small class="text-muted">Nenhum serviço incluído</small></p>
-                                        <?php } ?>
-                                        </div>
-                                        <p class="card-text ml-3"><small class="text-muted"><?php echo htmlspecialchars($servico['dsServico']);?></small></p>
+    <div class="row">
+        <?php foreach ($listarH as $hospedagem) { 
+            $st = ($hospedagem['stHospedagem'] == "0") ? 'hide' : '';
+        ?>
+            <div class="col-sm-12 mx-10 <?php echo $st; ?>">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 text-center">
+                            <img src="./img/hospedagem/<?php echo htmlspecialchars($hospedagem['urlImagemHospedagem']); ?>" alt="Imagem do Hotel" class="card-img-h">
+                        </div>
+                        <div class="col-md-4 border">
+                            <div class="card-body">
+                                <h6 class="card-title font-weight-bolder fs-2">Nome do Hotel: <?php echo htmlspecialchars($hospedagem['nmHotel']); ?></h6>
+                                <div class="avaliacao mb-2">
+                                    <?php
+                                    // Defina o número máximo de estrelas
+                                    $maxEstrelas = 5;
+
+                                    // Loop para exibir as estrelas
+                                    for ($i = 1; $i <= $maxEstrelas; $i++) {
+                                        if ($i <= $hospedagem['ntHotel']) {
+                                            echo '<span class="estrela ativa">&#9733;</span>'; // Estrela acesa
+                                        } else {
+                                            echo '<span class="estrela">&#9734;</span>'; // Estrela apagada
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <p class="card-text font-weight-bolder fs-2">Rua: <?php echo htmlspecialchars($hospedagem['ruaHospedagem']); ?></p>
+                                <p class="card-text"><small class="text-muted">Detalhes da Hospedagem</small></p>
+                                <div class="inside-box p-2">
+                                    <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($hospedagem['tpHospedagem']); ?></small></p>
+                                    <p class="card-text"><small class="text-muted"><strong>Serviços inclusos:</strong></small></p>
+                                    <div class="d-flex col">
+                                    <?php if (!empty($hospedagem['servicos'])) { ?>
+                                    <?php foreach ($hospedagem['servicos'] as $servico) { ?>
+                                        <p class="card-text mr-1 mb-1"><small class="text-muted"><?php echo htmlspecialchars($servico['nmServico']);?>.</small></p>
+                                    <?php } ?>
+                                    <?php } else { ?>
+                                    <p class="card-text"><small class="text-muted">Nenhum serviço incluído</small></p>
+                                    <?php } ?>
                                     </div>
+                                    <p class="card-text ml-3"><small class="text-muted"><?php echo htmlspecialchars($servico['dsServico']);?></small></p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card-body mt-30">
-                                    <div class="d-flex col justify-content-between">
-                                        <p class="card-text">Total do pacote:</p>
-                                        <strong>R$ <?php echo number_format($hospedagem['vlHospedagem'], 2, ',', '.'); ?></strong>
-                                    </div>
-                                    <div class="d-flex row justify-content-center mb-2">
-                                        <a href="" class="btn btn-outline-warning">Selecionar Hotel</a>
-                                    </div>
-                                    <div class="d-flex row justify-content-center">
-                                        <p class="card-text">Taxas inclusas em até: <strong><?php echo $hospedagem['qtParcelaHospedagem']; ?>X</strong></p>
-                                    </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body mt-30">
+                                <div class="d-flex col justify-content-between">
+                                    <p class="card-text">Total do pacote:</p>
+                                    <strong>R$ <?php echo number_format($hospedagem['vlHospedagem'], 2, ',', '.'); ?></strong>
+                                </div>
+                                <div class="d-flex row justify-content-center mb-2">
+                                    <a href="" class="btn btn-outline-warning">Selecionar Hotel</a>
+                                </div>
+                                <div class="d-flex row justify-content-center">
+                                    <p class="card-text">Taxas inclusas em até: <strong><?php echo $hospedagem['qtParcelaHospedagem']; ?>X</strong></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php } ?>
-        </div>
+            </div>
+        <?php } ?>
+    </div>
     <?php
 } else {
     echo 'Nenhuma hospedagem encontrada para esta cidade.';
 }
-
-
 
 require_once 'footer.php';
 
@@ -230,6 +253,8 @@ function DetalhesHospedagem($nmCidade) {
     
     $sql = 'SELECT 
                 h.cd_hospedagem, 
+                h.nm_hotel,
+                h.nt_hotel,
                 h.rua_hospedagem, 
                 h.tp_hospedagem,
                 h.vl_hospedagem, 
@@ -269,6 +294,8 @@ function DetalhesHospedagem($nmCidade) {
     // Liga as colunas do resultado às variáveis
     $res->bind_result(
         $cdHospedagem, 
+        $nmHotel,
+        $ntHotel,
         $ruaHospedagem, 
         $tpHospedagem, 
         $vlHospedagem, 
@@ -289,6 +316,8 @@ function DetalhesHospedagem($nmCidade) {
         if (!isset($resultados[$hospedagemKey])) {
             // Se a hospedagem ainda não foi adicionada, inicialize-a
             $resultados[$hospedagemKey] = [
+                'nmHotel' => $nmHotel,
+                'ntHotel'=>$ntHotel,
                 'ruaHospedagem' => $ruaHospedagem,
                 'tpHospedagem' => $tpHospedagem,
                 'vlHospedagem' => $vlHospedagem,
