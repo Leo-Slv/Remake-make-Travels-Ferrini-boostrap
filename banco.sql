@@ -210,3 +210,28 @@ nm_servico = 'Jantar',
 ds_servico = 'Self Service All Incluse, incluso em todas as diárias.',
 url_imagem_servico = 'cc9752223316f10b4fa9810a07a49746.webp';
 
+create table tb_hospedagem_servico(
+   cd_hospedagem int not null,
+   cd_servico int not null,
+   primary key (cd_hospedagem, cd_servico),
+   foreign key (cd_hospedagem) references tb_hospedagem(cd_hospedagem),
+   foreign key (cd_servico) references tb_servico(cd_servico)
+);
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (1, 1);
+
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (1, 2);
+
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (1, 3);
+
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (2, 1);
+
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (3, 2);
+
+INSERT INTO tb_hospedagem_servico (cd_hospedagem, cd_servico)
+VALUES (4, 3);
+
